@@ -29,7 +29,7 @@ nnoremap <Leader>sl :<C-u>SessionLoad<CR>
 nnoremap <leader>fh :Telescope oldfiles<CR>
 nnoremap <leader>ff <cmd>Telescope fd<cr>
 nnoremap <leader>fc <cmd>Telescope current_buffer_fuzzy_find<cr>
-nnoremap <leader>fl <cmd>Telescope live_grep_raw<cr>
+nnoremap <leader>fl <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <Leader>fM :Telescope vim_bookmarks current_file<cr>
 nnoremap <Leader>fm :Telescope vim_bookmarks<CR>

@@ -78,7 +78,6 @@ return require('packer').startup(function()
             "nvim-telescope/telescope-fzf-native.nvim",
             run = "make",
         }
-      use "nvim-telescope/telescope-live-grep-raw.nvim"
       use "tom-anders/telescope-vim-bookmarks.nvim"
 
 

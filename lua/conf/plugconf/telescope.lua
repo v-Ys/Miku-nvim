@@ -59,6 +59,9 @@ require('telescope').setup{
       -- find_command = { "find", "-type", "f" },
       find_command = {"fd"},
         },
+     live_grep = {
+         find_command={"rg"},
+     },
     
     },
 
@@ -84,7 +87,6 @@ require('telescope').setup{
 }
 
 
-require('telescope').load_extension('live_grep_raw')
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('vim_bookmarks')
 
