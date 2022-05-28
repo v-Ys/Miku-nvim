@@ -13,6 +13,7 @@ return require('packer').startup(function()
     use 'ishan9299/nvim-solarized-lua'
     use { 'dracula/vim', as = 'dracula' }
     use 'kristijanhusak/vim-hybrid-material'
+    use 'joshdick/onedark.vim'
     --icons
     use  'kyazdani42/nvim-web-devicons'
     --lualine

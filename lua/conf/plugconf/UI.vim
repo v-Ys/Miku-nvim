@@ -2,7 +2,11 @@
 "--colorscheme----
 " colorscheme solarized
 colorscheme mariana
-set bg=dark
+" colorscheme nord
+" colorscheme github_light
+" colorscheme hybrid_material
+" colorscheme onedark
+set bg=light
 
 
 lua<<EOF
@@ -10,9 +14,14 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'nord',
+    --theme = 'auto',
     disabled_filetypes = {},
     always_divide_middle = true,
     globalstatus = false,
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+    --component_separators = { left = "", right = "" },
+    --section_separators = { left = "", right = "" },
   },
    sections = {
     lualine_a = {'mode'},
