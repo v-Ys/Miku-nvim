@@ -65,7 +65,7 @@ set smartindent                              "智能缩进
 
 set copyindent                               "复制粘贴时保留原有的缩进
 
-set foldmethod=manual                        "代码折叠
+" set foldmethod=manual                        "代码折叠
 
 set nowrap                                   "不要换行
 
@@ -73,10 +73,13 @@ set completeopt=menu,menuone,noselect        "for cmp
 
 set encoding=utf-8 fileencodings=utf-8
 
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
 "剪切板
 set clipboard=unnamedplus
 set clipboard=unnamed
-set numberwidth=4
+set numberwidth=3
 
 "Cursor
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"

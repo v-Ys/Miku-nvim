@@ -61,7 +61,7 @@ let g:dashboard_custom_header = [
     \'',
     \]
 
-
+let g:dashboard_default_executive ='telescope'
 let g:dashboard_custom_shortcut={
 \ 'last_session'       : '➜',
 \ 'change_colorscheme' : '➜',
