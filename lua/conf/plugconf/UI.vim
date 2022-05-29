@@ -6,7 +6,7 @@ colorscheme mariana
 " colorscheme github_light
 " colorscheme hybrid_material
 " colorscheme onedark
-set bg=light
+set bg=dark
 
 
 lua<<EOF
