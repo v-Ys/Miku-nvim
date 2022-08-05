@@ -140,11 +140,6 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/mariana.vim",
     url = "https://github.com/sthendev/mariana.vim"
   },
-  ["nord-vim"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nord-vim",
-    url = "https://github.com/arcticicestudio/nord-vim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-autopairs",

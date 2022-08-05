@@ -79,7 +79,7 @@ set encoding=utf-8 fileencodings=utf-8
 "剪切板
 set clipboard=unnamedplus
 set clipboard=unnamed
-set numberwidth=4
+set numberwidth=5
 
 "Cursor
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"

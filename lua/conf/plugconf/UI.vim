@@ -1,9 +1,9 @@
 
 "--colorscheme----
 " colorscheme solarized
-colorscheme mariana
+" colorscheme mariana
 " colorscheme nord
-" colorscheme github_light
+colorscheme github_light
 " colorscheme hybrid_material
 " colorscheme onedark
 set bg=dark
@@ -13,8 +13,8 @@ lua<<EOF
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'nord',
-    --theme = 'auto',
+    --theme = 'nord',
+    theme = 'auto',
     disabled_filetypes = {},
     always_divide_middle = true,
     globalstatus = false,

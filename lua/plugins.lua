@@ -92,8 +92,6 @@ return require('packer').startup(function()
     
     --"telescopeyill依赖
     use "nvim-lua/plenary.nvim"
-    --vimwiki----
-    use 'vimwiki/vimwiki'
 
 
 end)
