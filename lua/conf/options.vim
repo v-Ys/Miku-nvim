@@ -2,8 +2,6 @@
 "常规配置
 set termguicolors                            "真彩模式
 
-set shortmess=atI                            " 启动的时候不显示那个援助乌干达儿童的提示  
-
 set nobackup                                 "禁止生成临时文件
 set noswapfile
 
@@ -73,6 +71,8 @@ set completeopt=menu,menuone,noselect        "for cmp
 
 set encoding=utf-8 fileencodings=utf-8
 
+" set spell
+set spelllang=en_us
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
 

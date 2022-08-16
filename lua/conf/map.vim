@@ -32,7 +32,10 @@ nnoremap <leader>fc <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <leader>fl <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <Leader>fM :Telescope vim_bookmarks current_file<cr>
-nnoremap <Leader>fm :Telescope vim_bookmarks<CR>
+nnoremap <Leader>fm :Tejescope vim_bookmarks<CR>
+nnoremap <Leader>fs :Telescope colorscheme<CR>
+nnoremap <Leader>fj :Telescope file_browser<CR> <ESC>
+nnoremap <Leader>fp :Telescope projects<CR>
 
 
 
@@ -43,10 +46,6 @@ nnoremap <leader>gr <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>gs <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap <leader>gk <cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>
 nnoremap <leader>gj <cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>
-
-
-
-
 
 
 
