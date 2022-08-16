@@ -30,7 +30,6 @@ lua<<EOF
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    --theme = 'nord',
     theme = 'auto',
     disabled_filetypes = {},
     always_divide_middle = true,
