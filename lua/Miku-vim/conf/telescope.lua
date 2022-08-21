@@ -1,5 +1,8 @@
---
-
+--NOTE:
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+    return
+end
 
 -- disable preview binaries
 local previewers = require("telescope.previewers")
@@ -23,22 +26,10 @@ local new_maker = function(filepath, bufnr, opts)
     }):sync()
 end
 
-
-require('telescope').setup {
+telescope.setup {
     defaults = {
-        --    buffer_previewer_maker = new_maker,
-        -- file_ignore_patterns = {},
         prompt_prefix = " ",
         selection_caret = " ",
-        -- path_display = {
-        --   -- shorten= {
-        --   --   -- e.g. for a path like
-        --   --   `alpha/beta/gamma/delta.txt`
-        --   -- setting `path_display.shorten = { len = 1, exclude = {1, -1} }`
-        --   -- will give a path like:
-        --   --   `alpha/b/g/delta.txt`
-        --   len = 3, exclude = {1, -1}
-        -- },
     },
 
     mappings = {
@@ -77,20 +68,11 @@ require('telescope').setup {
             override_generic_sorter = true, -- override the generic sorter
             override_file_sorter = true, -- override the file sorter
             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-            -- the default case_mode is "smart_case"
         },
+
         file_browser = {
-            theme = "dropdown",
-            -- disables netrw and use telescope-file-browser in its place
+            theme = "ivy",
             hijack_netrw = true,
-            -- mappings = {
-            --     ["i"] = {
-            --         -- your custom insert mode mappings
-            --     },
-            --     ["n"] = {
-            --         -- your custom normal mode mappings
-            --     },
-            -- },
         },
     },
 
@@ -100,7 +82,6 @@ require('telescope').setup {
 
 require("project_nvim").setup {}
 
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('vim_bookmarks')
-require('telescope').load_extension('projects')
-require("telescope").load_extension "file_browser"
+telescope.load_extension('fzf')
+telescope.load_extension('projects')
+telescope.load_extension('file_browser')

@@ -114,6 +114,16 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
   },
+  edge = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/edge",
+    url = "https://github.com/sainnhe/edge"
+  },
+  everforest = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -124,10 +134,10 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
-  gruvbox = {
+  ["gruvbox-material"] = {
     loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -138,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  ["lsp_signature.nvim"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
-    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -159,12 +164,8 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
-  ["nord-vim"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nord-vim",
-    url = "https://github.com/arcticicestudio/nord-vim"
-  },
   ["nvim-autopairs"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
@@ -173,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lastplace"] = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-lastplace",
+    url = "https://github.com/ethanholz/nvim-lastplace"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -189,15 +195,15 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-solarized-lua",
     url = "https://github.com/ishan9299/nvim-solarized-lua"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -208,6 +214,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/one-nvim",
     url = "https://github.com/Th3Whit3Wolf/one-nvim"
+  },
+  onehalf = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/onehalf/vim",
+    url = "https://github.com/sonph/onehalf"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -224,6 +235,16 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
+  },
+  ["space-vim-theme"] = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/space-vim-theme",
+    url = "https://github.com/liuchengxu/space-vim-theme"
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
@@ -233,11 +254,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
-  },
-  ["telescope-vim-bookmarks.nvim"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/telescope-vim-bookmarks.nvim",
-    url = "https://github.com/tom-anders/telescope-vim-bookmarks.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -249,15 +265,15 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
   },
-  ["vim-bookmarks"] = {
+  ["vim-code-dark"] = {
     loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/vim-bookmarks",
-    url = "https://github.com/MattesGroeger/vim-bookmarks"
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/vim-code-dark",
+    url = "https://github.com/tomasiser/vim-code-dark"
   },
-  ["vim-hybrid-material"] = {
+  ["vim-colors-xcode"] = {
     loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/vim-hybrid-material",
-    url = "https://github.com/kristijanhusak/vim-hybrid-material"
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/vim-colors-xcode",
+    url = "https://github.com/arzg/vim-colors-xcode"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -272,6 +288,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Runtimepath customization
+time([[Runtimepath customization]], true)
+vim.o.runtimepath = vim.o.runtimepath .. ",/Users/Miku/.local/share/nvim/site/pack/packer/start/onehalf/vim"
+time([[Runtimepath customization]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 if should_profile then save_profiles() end
 
 end)

@@ -18,8 +18,8 @@ lsp_installer.setup {
 
 for _, server in pairs(servers) do
     local opts = {
-        on_attach = require("conf.plugconf.lsp.handlers").on_attach,
-        capabilities = require("conf.plugconf.lsp.handlers").capabilities,
+        on_attach = require("Miku-vim.conf.lsp.handlers").on_attach,
+        capabilities = require("Miku-vim.conf.lsp.handlers").capabilities,
     }
     local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
     if has_custom_opts then

@@ -1,32 +1,4 @@
-lua <<EOF
---autopairs
-require('nvim-autopairs').setup()
-
---comment
-require('Comment').setup()
-
---indentline
-vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
-vim.g.indent_blankline_filetype_exclude = {
-	"help",
-	"startify",
-	"dashboard",
-	"packer",
-	"neogitstatus",
-	"NvimTree",
-	"Trouble",
-}
-vim.opt.list = true
-vim.opt.listchars:append("eol:↴")
-
-require("indent_blankline").setup {
-    show_end_of_line = true,
-}
-
-
-
-
---TODO-comments
+--TODO:-comments
 local status_ok, todo_comments = pcall(require, "todo-comments")
 if not status_ok then
   vim.notify("todo-comments not found!")
@@ -50,4 +22,3 @@ todo_comments.setup(
         }
     }
 )
-
