@@ -14,25 +14,25 @@ local options = {
     number         = true, --显示行号
     relativenumber = true, --相对行数
     signcolumn     = 'yes',
+    list           = true,
     listchars      = ("eol:↴,tab:»·,trail:·"),
     --
     backup         = false, --禁止生成临时文件
     swapfile       = false,
     errorbells     = false, --关闭错误信息响铃
     fileencodings  = 'utf-8',
-    --
-    -- smartindent = true, --智能缩进
+    -- 
+    -- smartindent = true, --智能缩进-
     autoindent     = true, --回车后下一行自动缩进
     shiftwidth     = 4, --缩进的列数
     copyindent     = true, --复制粘贴时保留原有的缩进
     tabstop        = 4, --一个tab键所占的列数
     expandtab      = true, --自动将tab键输入转化为相应的空格数
-    list           = true,
     --
+    ignorecase     = true, --搜索时忽略大小写
     hlsearch       = true, --高亮显示搜索的匹配结果，输入结束时才显示
     incsearch      = true, --高亮显示搜索的匹配过程，每输入一个字符，就自动跳到第一个匹配的结果：
     smartcase      = true, --智能搜索
-    ignorecase     = true, --搜索时忽略大小写
     completeopt    = { 'menu', 'menuone', 'noselect' }, --for cmp
     showcmd        = true, --显示输入命令
     wildmenu       = true, --在命令模式下，按下 tab 键可以自动补全命令
@@ -44,7 +44,7 @@ local options = {
     foldenable     = true,
     foldmethod     = 'expr',
     foldexpr       = 'nvim_treesitter#foldexpr()',
-    -- bg='dark'
+    bg             = 'dark'
     -- bg='light'
 
 }
@@ -63,12 +63,12 @@ vim.cmd(
 -- 'colorscheme github_dark'
 -- 'colorscheme onehalflight'
 -- 'colorscheme onehalfdark'
-'colorscheme one-nvim'
+-- 'colorscheme one-nvim'
 -- 'colorscheme codedark'
 -- 'colorscheme xcodelight'
 -- 'colorscheme xcodelighthc'
 -- 'colorscheme xcodewwdc'
--- 'colorscheme everforst'
+    'colorscheme everforest'
 -- 'colorscheme gruvbox-material'
 -- 'colorscheme edge'
 )

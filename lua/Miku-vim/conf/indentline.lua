@@ -1,9 +1,8 @@
---NOTE:
-
---comment
- require('Comment').setup()
 
 --indentline
+require("indent_blankline").setup {
+    show_end_of_line = true,
+}
 vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 vim.g.indent_blankline_filetype_exclude = {
 	"help",
@@ -14,7 +13,3 @@ vim.g.indent_blankline_filetype_exclude = {
 	"Trouble",
 }
 
-require("indent_blankline").setup {
-    show_end_of_line = true,
-}
- 

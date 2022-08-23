@@ -23,7 +23,6 @@ return require('packer').startup(function()
     use 'tomasiser/vim-code-dark'
     use { 'sonph/onehalf', rtp = 'vim' }
     use 'arzg/vim-colors-xcode'
-    use 'liuchengxu/space-vim-theme'
 
     use 'kyazdani42/nvim-web-devicons' --icons
     use 'nvim-lualine/lualine.nvim' --lualine
@@ -34,7 +33,7 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-buffer' -- buffer completions
     use 'hrsh7th/cmp-path' -- path completions
     use 'hrsh7th/cmp-cmdline' -- cmdline completions
-    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lsp' --for lsp
     --snip
     use 'saadparwaiz1/cmp_luasnip'
     use "L3MON4D3/LuaSnip" --snippet engine
@@ -45,9 +44,17 @@ return require('packer').startup(function()
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
     -- treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlight
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } --fold
 
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v2', -- optional but strongly recommended
+        config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+        end
+    }
     use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end } --autopairs
     use 'numToStr/Comment.nvim' --comment
     use 'tpope/vim-surround' -- vim surround

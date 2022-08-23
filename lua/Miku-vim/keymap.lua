@@ -35,19 +35,19 @@ local keymaps = {
         ["<A-k>"] = ":m .-2<CR>==",
 
         -- Better move
-        ["K"] = "5k",
-        ["J"] = "5j",
-        ["H"] = "^",
-        ["L"] = "$",
-        ["<"] = "<<",
-        [">"] = ">>",
-        ["<leader>j"] = "J",
+        ["K"]          = "4k",
+        ["J"]          = "4j",
+        ["H"]          = "^",
+        ["L"]          = "$",
+        ["<"]          = "<<",
+        [">"]          = ">>",
+        ["<leader>q"]  = "j",
         --buffers
-        ["{"] = ":bn<CR>",
-        ["}"] = ":bp<CR>",
-        ["<leader>]"] = ":bd<CR>",
-        --Cancel the highlight
-        ["<leader>u"] = ":nohl<cr>",
+        ["{"]          = ":bn<cr>",
+        ["}"]          = ":bp<cr>",
+        ["<leader>]"]  = ":bd<cr>",
+        --cancel the highlight
+        ["<leader>u"]  = ":nohl<cr>",
         --dashboad
         ["<Leader>ss"] = ":<C-u>SessionSave<CR>",
         ["<Leader>sl"] = ":<C-u>SessionLoad<CR>",
@@ -68,8 +68,13 @@ local keymaps = {
         ["<leader>gr"] = "<cmd>lua vim.lsp.buf.rename()<CR>",
         ["<leader>gs"] = "<cmd>lua vim.diagnostic.open_float()<CR>",
         ["<leader>gk"] = "<cmd>lua vim.diagnostic.goto_prev({ border = 'rounded' })<CR>",
-        ["<leader>gj"] = "<cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>"
+        ["<leader>gj"] = "<cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>",
+        --hop
+        -- ["f"]          = "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+        ["gf"]="<cmd>HopWord<cr>",
+
     },
+
     term_mode = {
         -- Terminal window navigation
         ["<C-h>"] = "<C-\\><C-N><C-w>h",
@@ -83,12 +88,20 @@ local keymaps = {
         ["<"] = "<gv",
         [">"] = ">gv",
 
+        ["K"] = "5k",
+        ["J"] = "5j",
+        ["H"] = "^",
+        ["L"] = "$",
     },
 
     visual_block_mode = {
         -- Move current line / block with Alt-j/k ala vscode.
         ["<A-s>"] = ":m '>+1<CR>gv-gv",
         ["<A-w>"] = ":m '<-2<CR>gv-gv",
+        ["k"] = "5k",
+        ["J"] = "5j",
+        ["H"] = "^",
+        ["L"] = "$",
     },
 
     command_mode = {
