@@ -4,6 +4,8 @@ require('Miku-vim.options')
 require('Miku-vim.keymap')
 require('Miku-vim.plugins')
 require('Miku-vim.conf')
+<<<<<<< HEAD
+=======
 require('Miku-vim.keymap')
 
 
@@ -14,3 +16,5 @@ require('Miku-vim.keymap')
 
 
 
+fuckfuck
+>>>>>>> developing
