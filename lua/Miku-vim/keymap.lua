@@ -25,9 +25,9 @@ local keymaps = {
 
     normal_mode = {
         -- Resize with arrows
-        ["<A-Up>"] = ":resize -2<CR>",
-        ["<A-Down>"] = ":resize +2<CR>",
-        ["<A-Left>"] = ":vertical resize -2<CR>",
+        ["<A-Up>"]    = ":resize -2<CR>",
+        ["<A-Down>"]  = ":resize +2<CR>",
+        ["<A-Left>"]  = ":vertical resize -2<CR>",
         ["<A-Right>"] = ":vertical resize +2<CR>",
 
         -- Move current line / block
@@ -35,8 +35,8 @@ local keymaps = {
         ["<A-k>"] = ":m .-2<CR>==",
 
         -- Better move
-        ["K"]          = "4k",
-        ["J"]          = "4j",
+        ["K"]          = "3k",
+        ["J"]          = "3j",
         ["H"]          = "^",
         ["L"]          = "$",
         ["<"]          = "<<",
@@ -70,8 +70,7 @@ local keymaps = {
         ["<leader>gk"] = "<cmd>lua vim.diagnostic.goto_prev({ border = 'rounded' })<CR>",
         ["<leader>gj"] = "<cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>",
         --hop
-        -- ["f"]          = "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
-        ["gf"]="<cmd>HopWord<cr>",
+        ["gf"]         = "<cmd>HopWord<cr>",
 
     },
 
@@ -88,8 +87,8 @@ local keymaps = {
         ["<"] = "<gv",
         [">"] = ">gv",
 
-        ["K"] = "5k",
-        ["J"] = "5j",
+        ["K"] = "3k",
+        ["J"] = "3j",
         ["H"] = "^",
         ["L"] = "$",
     },
@@ -98,10 +97,10 @@ local keymaps = {
         -- Move current line / block with Alt-j/k ala vscode.
         ["<A-s>"] = ":m '>+1<CR>gv-gv",
         ["<A-w>"] = ":m '<-2<CR>gv-gv",
-        ["k"] = "5k",
-        ["J"] = "5j",
-        ["H"] = "^",
-        ["L"] = "$",
+        ["k"]     = "3k",
+        ["J"]     = "3j",
+        ["H"]     = "^",
+        ["L"]     = "$",
     },
 
     command_mode = {
@@ -116,4 +115,3 @@ for mode, map in pairs(keymaps) do
         vim.api.nvim_set_keymap(mode_adapters[mode], key, cmd, opts[mode])
     end
 end
-

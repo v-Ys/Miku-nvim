@@ -44,8 +44,8 @@ local options = {
     foldenable     = true,
     foldmethod     = 'expr',
     foldexpr       = 'nvim_treesitter#foldexpr()',
-    bg             = 'dark'
-    -- bg='light'
+    -- bg             = 'dark'
+    bg='light'
 
 }
 
@@ -63,12 +63,12 @@ vim.cmd(
 -- 'colorscheme github_dark'
 -- 'colorscheme onehalflight'
 -- 'colorscheme onehalfdark'
--- 'colorscheme one-nvim'
+'colorscheme one-nvim'
 -- 'colorscheme codedark'
 -- 'colorscheme xcodelight'
 -- 'colorscheme xcodelighthc'
 -- 'colorscheme xcodewwdc'
-    'colorscheme everforest'
+    -- 'colorscheme everforest'
 -- 'colorscheme gruvbox-material'
 -- 'colorscheme edge'
 )
