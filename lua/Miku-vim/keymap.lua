@@ -35,7 +35,7 @@ local keymaps = {
         ["<A-k>"] = ":m .-2<CR>==",
 
         -- -- Better move
-        -- ["K"]          = "3k",
+        ["K"]          = "3k",
         ["J"]          = "3j",
         ["H"]          = "^",
         ["L"]          = "$",
@@ -60,7 +60,6 @@ local keymaps = {
         ["<Leader>fm"] = "<cmd>Telescope marks<CR>",
         ["<Leader>fM"] = "<cmd>TodoTelescope<CR>",
         ["<Leader>fs"] = "<cmd>Telescope colorscheme<CR>",
-        ["<Leader>fj"] = "<cmd>Telescope file_browser<CR> <ESC>",
         ["<Leader>fp"] = "<cmd>Telescope projects<CR>",
         --lsp
         ["<leader>gi"] = "<cmd>lua vim.lsp.buf.hover()<CR>",
@@ -71,7 +70,8 @@ local keymaps = {
         ["<leader>gj"] = "<cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>",
         --hop
         ["gf"]         = "<cmd>HopWord<cr>",
-
+        --n vim tree
+        ["<leader>n"] = "<cmd>NvimTreeToggle<cr>"
     },
 
     term_mode = {

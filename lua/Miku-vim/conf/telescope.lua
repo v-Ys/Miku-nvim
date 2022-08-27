@@ -34,7 +34,6 @@ telescope.setup {
 
     mappings = {
 
-
     },
 
     pickers = {
@@ -57,12 +56,8 @@ telescope.setup {
     },
 
 
-
     extensions = {
-        -- Your extension configuration goes here:
-        -- extension_name = {
-        --   extension_config_key = value,
-        -- }
+
         fzf = {
             fuzzy = true, -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
@@ -70,12 +65,7 @@ telescope.setup {
             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
         },
 
-        file_browser = {
-            theme = "ivy",
-            hijack_netrw = true,
-        },
     },
-
 
 
 }
@@ -84,4 +74,3 @@ require("project_nvim").setup {}
 
 telescope.load_extension('fzf')
 telescope.load_extension('projects')
-telescope.load_extension('file_browser')

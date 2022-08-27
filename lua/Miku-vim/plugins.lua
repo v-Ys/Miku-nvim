@@ -23,6 +23,7 @@ return require('packer').startup(function()
     use 'tomasiser/vim-code-dark'
     use { 'sonph/onehalf', rtp = 'vim' }
     use 'arzg/vim-colors-xcode'
+    use "EdenEast/nightfox.nvim"
 
     use 'kyazdani42/nvim-web-devicons' --icons
     use 'nvim-lualine/lualine.nvim' --lualine
@@ -45,26 +46,27 @@ return require('packer').startup(function()
     use "williamboman/mason.nvim" --install lsp server
     use "jose-elias-alvarez/null-ls.nvim" --for format and spells
 
+    --Telescope
+    use "nvim-telescope/telescope.nvim"
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make", }
+    use "nvim-lua/plenary.nvim" --"telescope rely on it
+    use 'ahmedkhalf/project.nvim' --project
+
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlight
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } --fold
 
-
-    use 'phaazon/hop.nvim' --easy motion
-    use "windwp/nvim-autopairs" --autopairs
+    use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end }
     use 'numToStr/Comment.nvim' --comment
     use 'tpope/vim-surround' -- vim surround
     use 'tpope/vim-repeat' -- enhance '.' for surround
+
     use 'folke/todo-comments.nvim' --TODO:
     use 'iamcco/markdown-preview.nvim' --markdown preview
-    use 'ethanholz/nvim-lastplace' --lastplace
 
-    --Telescope
-    use "nvim-telescope/telescope.nvim"
-    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make", }
-    use "nvim-telescope/telescope-file-browser.nvim" --files
-    use "nvim-lua/plenary.nvim" --"telescope rely on it
-    use 'ahmedkhalf/project.nvim' --project
+    use 'ethanholz/nvim-lastplace' --lastplace
+    use 'phaazon/hop.nvim' --easy motion
+    use 'kyazdani42/nvim-tree.lua'
 
     -- use "norcalli/nvim-colorizer.lua" -- show color
 
