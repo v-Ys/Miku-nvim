@@ -28,6 +28,7 @@ return require('packer').startup(function()
     use 'nvim-lualine/lualine.nvim' --lualine
     use 'glepnir/dashboard-nvim' --welcome
     use 'lukas-reineke/indent-blankline.nvim' --indentline
+
     --cmp
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer' -- buffer completions
@@ -41,21 +42,16 @@ return require('packer').startup(function()
 
     --LSP
     use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    use "williamboman/mason.nvim" --install lsp server
+    use "jose-elias-alvarez/null-ls.nvim" --for format and spells
 
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlight
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } --fold
 
-    use {
-        'phaazon/hop.nvim',
-        branch = 'v2', -- optional but strongly recommended
-        config = function()
-            -- you can configure Hop the way you like here; see :h hop-config
-            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-        end
-    }
-    use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end } --autopairs
+
+    use 'phaazon/hop.nvim' --easy motion
+    use "windwp/nvim-autopairs" --autopairs
     use 'numToStr/Comment.nvim' --comment
     use 'tpope/vim-surround' -- vim surround
     use 'tpope/vim-repeat' -- enhance '.' for surround

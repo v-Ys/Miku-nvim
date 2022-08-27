@@ -34,14 +34,14 @@ local keymaps = {
         ["<A-j>"] = ":m .+1<CR>==",
         ["<A-k>"] = ":m .-2<CR>==",
 
-        -- Better move
-        ["K"]          = "3k",
+        -- -- Better move
+        -- ["K"]          = "3k",
         ["J"]          = "3j",
         ["H"]          = "^",
         ["L"]          = "$",
         ["<"]          = "<<",
         [">"]          = ">>",
-        ["<leader>q"]  = "j",
+        ["<leader>q"]  = "J",
         --buffers
         ["{"]          = ":bn<cr>",
         ["}"]          = ":bp<cr>",
@@ -115,3 +115,5 @@ for mode, map in pairs(keymaps) do
         vim.api.nvim_set_keymap(mode_adapters[mode], key, cmd, opts[mode])
     end
 end
+
+

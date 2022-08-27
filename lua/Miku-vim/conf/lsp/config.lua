@@ -1,20 +1,29 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not status_ok then
+--NOTE:
+local ok, mason = pcall(require, "mason")
+if not ok then
     return
 end
 
+mason.setup {
+    max_concurrent_installers = 10,
+    -- log_level = vim.log.levels.TRACE,
+    ui = {
+        icons = {
+            package_installed = "",
+            package_pending = "",
+            package_uninstalled = "",
+        },
+    },
+}
 local lspconfig = require("lspconfig")
 
 local servers = {
     "clangd",
     "rust_analyzer",
-    "jedi_language_server",
     "sumneko_lua",
+    "pyright" ,
 }
 
-lsp_installer.setup {
-    ensure_installed = servers
-}
 
 for _, server in pairs(servers) do
     local opts = {
