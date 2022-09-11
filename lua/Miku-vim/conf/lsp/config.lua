@@ -6,7 +6,6 @@ end
 
 mason.setup {
     max_concurrent_installers = 10,
-    -- log_level = vim.log.levels.TRACE,
     ui = {
         icons = {
             package_installed = "",
@@ -21,7 +20,7 @@ local servers = {
     "clangd",
     "rust_analyzer",
     "sumneko_lua",
-    "pyright" ,
+    "pyright",
 }
 
 
@@ -37,4 +36,3 @@ for _, server in pairs(servers) do
     end
     lspconfig[server].setup(opts)
 end
-

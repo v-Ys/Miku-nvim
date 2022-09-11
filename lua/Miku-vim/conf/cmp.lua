@@ -78,9 +78,9 @@ cmp.setup({
     },
 
     mapping = cmp.mapping.preset.insert {
-        ["<C-e>"] = cmp.mapping.abort(),
+        ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+        ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        -- ['<Esc>'] = cmp.mapping.close(),
         -- TODO: potentially fix emmet nonsense
         ['<Tab>'] = function(fallback)
             if cmp.visible() then

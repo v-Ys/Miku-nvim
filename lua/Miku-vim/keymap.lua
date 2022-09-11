@@ -31,8 +31,8 @@ local keymaps = {
         ["<A-Right>"] = ":vertical resize +2<CR>",
 
         -- Move current line / block
-        ["<A-j>"] = ":m .+1<CR>==",
-        ["<A-k>"] = ":m .-2<CR>==",
+        ["<A-w>"] = ":m .-2<CR>==",
+        ["<A-s>"] = ":m .+1<CR>==",
 
         -- -- Better move
         ["K"]          = "3k",
@@ -61,13 +61,6 @@ local keymaps = {
         ["<Leader>fM"] = "<cmd>TodoTelescope<CR>",
         ["<Leader>fs"] = "<cmd>Telescope colorscheme<CR>",
         ["<Leader>fp"] = "<cmd>Telescope projects<CR>",
-        --lsp
-        ["<leader>gi"] = "<cmd>lua vim.lsp.buf.hover()<CR>",
-        ["<leader>gd"] = "<cmd>lua vim.lsp.buf.definition()<CR>",
-        ["<leader>gr"] = "<cmd>lua vim.lsp.buf.rename()<CR>",
-        ["<leader>gs"] = "<cmd>lua vim.diagnostic.open_float()<CR>",
-        ["<leader>gk"] = "<cmd>lua vim.diagnostic.goto_prev({ border = 'rounded' })<CR>",
-        ["<leader>gj"] = "<cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>",
         --hop
         ["gf"]         = "<cmd>HopWord<cr>",
         --n vim tree
@@ -76,10 +69,10 @@ local keymaps = {
 
     term_mode = {
         -- Terminal window navigation
-        ["<C-h>"] = "<C-\\><C-N><C-w>h",
-        ["<C-j>"] = "<C-\\><C-N><C-w>j",
-        ["<C-k>"] = "<C-\\><C-N><C-w>k",
-        ["<C-l>"] = "<C-\\><C-N><C-w>l",
+        -- ["<C-h>"] = "<C-\\><C-N><C-w>h",
+        -- ["<C-j>"] = "<C-\\><C-N><C-w>j",
+        -- ["<C-k>"] = "<C-\\><C-N><C-w>k",
+        -- ["<C-l>"] = "<C-\\><C-N><C-w>l",
     },
 
     visual_mode = {

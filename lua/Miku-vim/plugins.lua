@@ -4,7 +4,7 @@ if not status_ok then
     return
 end
 
-return require('packer').startup(function()
+return require('packer').startup({ function()
     -- provided appimage.
     use 'lewis6991/impatient.nvim'
     -- Packer can manage itself
@@ -13,17 +13,18 @@ return require('packer').startup(function()
 
     --theme
     use 'sthendev/mariana.vim'
-    use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
     use 'Th3Whit3Wolf/one-nvim'
     use 'ishan9299/nvim-solarized-lua'
     use { 'dracula/vim', as = 'dracula' }
     use 'sainnhe/everforest'
     use 'sainnhe/gruvbox-material'
     use 'sainnhe/edge'
-    use 'tomasiser/vim-code-dark'
     use { 'sonph/onehalf', rtp = 'vim' }
+    use 'EdenEast/nightfox.nvim'
+    use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
+    use "lunarvim/darkplus.nvim"
+    use 'folke/tokyonight.nvim'
     use 'arzg/vim-colors-xcode'
-    use "EdenEast/nightfox.nvim"
 
     use 'kyazdani42/nvim-web-devicons' --icons
     use 'nvim-lualine/lualine.nvim' --lualine
@@ -38,25 +39,25 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp' --for lsp
     --snip
     use 'saadparwaiz1/cmp_luasnip'
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+    use 'L3MON4D3/LuaSnip' --snippet engine
+    use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
 
     --LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/mason.nvim" --install lsp server
-    use "jose-elias-alvarez/null-ls.nvim" --for format and spells
+    use 'neovim/nvim-lspconfig' -- enable LSP
+    use 'williamboman/mason.nvim' --install lsp server
+    use 'jose-elias-alvarez/null-ls.nvim' --for format and spells
 
     --Telescope
-    use "nvim-telescope/telescope.nvim"
-    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make", }
-    use "nvim-lua/plenary.nvim" --"telescope rely on it
+    use 'nvim-telescope/telescope.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = "make", }
+    use 'nvim-lua/plenary.nvim' --"telescope rely on it
     use 'ahmedkhalf/project.nvim' --project
 
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlight
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } --fold
 
-    use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end }
+    use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
     use 'numToStr/Comment.nvim' --comment
     use 'tpope/vim-surround' -- vim surround
     use 'tpope/vim-repeat' -- enhance '.' for surround
@@ -68,6 +69,17 @@ return require('packer').startup(function()
     use 'phaazon/hop.nvim' --easy motion
     use 'kyazdani42/nvim-tree.lua'
 
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end }
     -- use "norcalli/nvim-colorizer.lua" -- show color
 
-end)
+end,
+    config = {
+        -- compile_path = vim.fn.stdpath "data" .. "/plugin",
+        display = {
+            open_fn = function()
+                return require('packer.util').float({ border = 'rounded' })
+            end
+        }
+    } })
