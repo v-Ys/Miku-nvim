@@ -11,8 +11,9 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 require("luasnip.loaders.from_vscode").load({ paths = {
-    vim.fn.stdpath("config") .. "/snippets"
+    vim.fn.stdpath("config") .. "/lua/Miku-vim/snippets"
 } })
+
 
 local kind_icons = {
     Text = "",
