@@ -45,7 +45,8 @@ return require('packer').startup({ function()
     --LSP
     use 'neovim/nvim-lspconfig' -- enable LSP
     use 'williamboman/mason.nvim' --install lsp server
-    use 'jose-elias-alvarez/null-ls.nvim' --for format and spells
+    use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
+    -- use 'jose-elias-alvarez/null-ls.nvim' --for format and spells
 
     --Telescope
     use 'nvim-telescope/telescope.nvim'
