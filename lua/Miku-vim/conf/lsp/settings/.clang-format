@@ -3,11 +3,6 @@
 # clang-format configuration file. Intended for clang-format >= 11.
 #
 # For more information, see:
-#
-#   Documentation/process/clang-format.rst
-#   https://clang.llvm.org/docs/ClangFormat.html
-#   https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-#
 ---
 AccessModifierOffset: -4
 AlignAfterOpenBracket: Align

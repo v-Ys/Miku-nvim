@@ -41,30 +41,31 @@ local keymaps = {
         ["L"]          = "$",
         ["<"]          = "<<",
         [">"]          = ">>",
-        ["<leader>q"]  = "J",
+        ["<leader>u"]  = "J",
         --buffers
-        ["{"]          = ":bn<cr>",
-        ["}"]          = ":bp<cr>",
-        ["<leader>]"]  = ":bd<cr>",
+        ["{"]          = ":bn<CR>",
+        ["}"]          = ":bp<CR>",
+        ["<leader>]"]  = ":bd<CR>",
         --cancel the highlight
-        ["<leader>u"]  = ":nohl<cr>",
+        ["<leader>q"]  = ":nohl<CR>",
         --dashboad
         ["<Leader>ss"] = ":<C-u>SessionSave<CR>",
         ["<Leader>sl"] = ":<C-u>SessionLoad<CR>",
         --Telescope
         ["<leader>fh"] = "<cmd>Telescope oldfiles<CR>",
-        ["<leader>ff"] = "<cmd>Telescope fd<cr>",
-        ["<leader>fc"] = "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-        ["<leader>fl"] = "<cmd>Telescope live_grep<cr>",
-        ["<leader>fb"] = "<cmd>Telescope buffers<cr>",
+        ["<leader>ff"] = "<cmd>Telescope fd<CR>",
+        ["<leader>fc"] = "<cmd>Telescope current_buffer_fuzzy_find<CR>",
+        ["<leader>fl"] = "<cmd>Telescope live_grep<CR>",
+        ["<leader>fb"] = "<cmd>Telescope buffers<CR>",
         ["<Leader>fm"] = "<cmd>Telescope marks<CR>",
         ["<Leader>fM"] = "<cmd>TodoTelescope<CR>",
         ["<Leader>fs"] = "<cmd>Telescope colorscheme<CR>",
         ["<Leader>fp"] = "<cmd>Telescope projects<CR>",
         --hop
-        ["gf"]         = "<cmd>HopWord<cr>",
+        ["gf"]         = "<cmd>HopWord<CR>",
         --n vim tree
-        ["<leader>n"] = "<cmd>NvimTreeToggle<cr>"
+        -- ["<leader>n"]  = "<cmd>NvimTreeToggle<CR>",
+        ["<leader>n"]  = "<cmd>NeoTreeFloatToggle<CR>",
     },
 
     term_mode = {
@@ -110,5 +111,3 @@ for mode, map in pairs(keymaps) do
         vim.api.nvim_set_keymap(mode_adapters[mode], key, cmd, opts[mode])
     end
 end
-
-

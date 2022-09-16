@@ -22,8 +22,6 @@ return require('packer').startup({ function()
     use { 'sonph/onehalf', rtp = 'vim' }
     use 'EdenEast/nightfox.nvim'
     use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
-    use "lunarvim/darkplus.nvim"
-    use 'folke/tokyonight.nvim'
     use 'arzg/vim-colors-xcode'
 
     use 'kyazdani42/nvim-web-devicons' --icons
@@ -58,24 +56,22 @@ return require('packer').startup({ function()
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlight
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } --fold
 
-    use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
+    use 'windwp/nvim-autopairs'
     use 'numToStr/Comment.nvim' --comment
     use 'tpope/vim-surround' -- vim surround
     use 'tpope/vim-repeat' -- enhance '.' for surround
-
-    use 'folke/todo-comments.nvim' --TODO:
-    use 'iamcco/markdown-preview.nvim' --markdown preview
-
     use 'ethanholz/nvim-lastplace' --lastplace
+    use 'folke/todo-comments.nvim' --TODO:
     use 'phaazon/hop.nvim' --easy motion
-    use 'kyazdani42/nvim-tree.lua'
 
-    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end }
+
+    use { "akinsho/toggleterm.nvim", tag = '*', }
+    use { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x", }
+    use "MunifTanjim/nui.nvim" --for neotree
     -- use "norcalli/nvim-colorizer.lua" -- show color
 
 end,
+    --NOTE: Packer config
     config = {
         -- compile_path = vim.fn.stdpath "data" .. "/plugin",
         display = {
