@@ -21,10 +21,10 @@ local options = {
     swapfile       = false,
     errorbells     = false, --关闭错误信息响铃
     fileencodings  = 'utf-8',
-    -- 
+    --
     -- smartindent = true, --智能缩进-
     autoindent     = true, --回车后下一行自动缩进
-    shiftwidth     = 4, --缩进的列数
+    shiftwidth     = 4, -- the number of spaces inserted for each indentation
     copyindent     = true, --复制粘贴时保留原有的缩进
     tabstop        = 4, --一个tab键所占的列数
     expandtab      = true, --自动将tab键输入转化为相应的空格数
@@ -45,7 +45,7 @@ local options = {
     foldmethod     = 'expr',
     foldexpr       = 'nvim_treesitter#foldexpr()',
     -- bg             = 'dark'
-    bg='light'
+    bg             = 'light'
 
 }
 
@@ -59,16 +59,16 @@ vim.cmd(
 -- 'colorscheme solarized'
 -- 'colorscheme mariana'
 -- 'colorscheme dracula'
--- 'colorscheme github_light'
+    'colorscheme github_light'
 -- 'colorscheme github_dark'
 -- 'colorscheme onehalflight'
 -- 'colorscheme onehalfdark'
-'colorscheme one-nvim'
--- 'colorscheme codedark'
+-- 'colorscheme one-nvim'
+-- 'colorscheme darkplus'
 -- 'colorscheme xcodelight'
 -- 'colorscheme xcodelighthc'
 -- 'colorscheme xcodewwdc'
-    -- 'colorscheme everforest'
+-- 'colorscheme everforest'
 -- 'colorscheme gruvbox-material'
 -- 'colorscheme edge'
 )

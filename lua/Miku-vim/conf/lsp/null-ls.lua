@@ -10,7 +10,8 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
     debug = false,
     sources = {
-        formatting.autopep8, -- for python
+        -- formatting.autopep8, -- for python
+        formatting.clang_format, -- for cpp
         -- completion.spell,
     },
 })
