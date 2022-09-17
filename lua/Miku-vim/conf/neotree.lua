@@ -2,7 +2,7 @@ local status_ok, neotree = pcall(require, "neo-tree")
 if not status_ok then return end
 
 neotree.setup({
-    close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+    close_if_last_window = true, 
     popup_border_style = "rounded",
     enable_diagnostics = false,
     default_component_configs = {
@@ -47,7 +47,7 @@ neotree.setup({
         filtered_items = {
             hide_by_name = {
             },
-            never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
+            never_show = {
                 ".DS_Store",
             },
         },
@@ -58,6 +58,6 @@ neotree.setup({
     git_status = {
         window = {
             position = "float",
-        }
-    }
+        },
+    },
 })

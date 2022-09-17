@@ -3,8 +3,8 @@ local M = {}
 M.setup = function()
     local signs = {
         { name = "DiagnosticSignError", text = "" },
-        { name = "DiagnosticSignWarn", text = "礼" },
-        { name = "DiagnosticSignHint", text = "" },
+        { name = "DiagnosticSignWarn", text = "" },
+        { name = "DiagnosticSignHint", text = "礼" },
         { name = "DiagnosticSignInfo", text = "" },
         --      礼   
     }

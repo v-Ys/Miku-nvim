@@ -12,17 +12,16 @@ return require('packer').startup({ function()
 
 
     --theme
-    use 'sthendev/mariana.vim'
+    use { 'sthendev/mariana.vim', run = 'make' }
     use 'Th3Whit3Wolf/one-nvim'
     use 'ishan9299/nvim-solarized-lua'
     use { 'dracula/vim', as = 'dracula' }
-    use 'sainnhe/everforest'
-    use 'sainnhe/gruvbox-material'
-    use 'sainnhe/edge'
+    -- use 'sainnhe/everforest'
+    -- use 'sainnhe/gruvbox-material'
+    -- use 'sainnhe/edge'
     use { 'sonph/onehalf', rtp = 'vim' }
     use 'EdenEast/nightfox.nvim'
     use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
-    use 'arzg/vim-colors-xcode'
 
     use 'kyazdani42/nvim-web-devicons' --icons
     use 'nvim-lualine/lualine.nvim' --lualine
@@ -43,8 +42,7 @@ return require('packer').startup({ function()
     --LSP
     use 'neovim/nvim-lspconfig' -- enable LSP
     use 'williamboman/mason.nvim' --install lsp server
-    use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
-    -- use 'jose-elias-alvarez/null-ls.nvim' --for format and spells
+    use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters
 
     --Telescope
     use 'nvim-telescope/telescope.nvim'

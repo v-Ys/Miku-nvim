@@ -49,6 +49,9 @@ telescope.setup {
             find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
         },
 
+        colorscheme={
+            theme = "dropdown",
+        },
         live_grep = {
             find_command = { "rg" },
         },

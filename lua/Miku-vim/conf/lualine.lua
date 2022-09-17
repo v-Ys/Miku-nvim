@@ -30,7 +30,7 @@ lualine.setup {
                 readonly = '', -- Text to show when the file is non-modifiable or readonly.
                 unnamed = '', -- Text to show for unnamed buffers.
             }
-     } },
+        } },
         lualine_x = { 'encoding', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }

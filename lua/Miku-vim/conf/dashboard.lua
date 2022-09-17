@@ -27,7 +27,7 @@ db.custom_center = {
       desc = 'Miku-vim',
       action ='DashboardNewFile'},
     }
-db.session_directory = '~/.local/share/nvim/plugged/other'
+db.session_directory = '~/.local/share/nvim/other'
 
 
 
