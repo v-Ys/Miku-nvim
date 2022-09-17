@@ -35,8 +35,8 @@ local keymaps = {
         ["<A-s>"] = ":m .+1<CR>==",
 
         -- -- Better move
-        ["K"]          = "3k",
-        ["J"]          = "3j",
+        ["K"]          = "4k",
+        ["J"]          = "4j",
         ["H"]          = "^",
         ["L"]          = "$",
         ["<"]          = "<<",
@@ -68,12 +68,13 @@ local keymaps = {
         ["<leader>n"]  = "<cmd>NeoTreeFloatToggle<CR>",
     },
 
+
     term_mode = {
         -- Terminal window navigation
-        -- ["<C-h>"] = "<C-\\><C-N><C-w>h",
-        -- ["<C-j>"] = "<C-\\><C-N><C-w>j",
-        -- ["<C-k>"] = "<C-\\><C-N><C-w>k",
-        -- ["<C-l>"] = "<C-\\><C-N><C-w>l",
+        ["<C-h>"] = "<C-\\><C-N><C-w>h",
+        ["<C-j>"] = "<C-\\><C-N><C-w>j",
+        ["<C-k>"] = "<C-\\><C-N><C-w>k",
+        ["<C-l>"] = "<C-\\><C-N><C-w>l",
     },
 
     visual_mode = {
