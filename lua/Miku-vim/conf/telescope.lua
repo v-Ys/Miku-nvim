@@ -4,6 +4,13 @@ if not status_ok then
     return
 end
 
+local status_oks, project = pcall(require, "project_nvim")
+if not status_oks then
+    return
+end
+
+
+
 -- disable preview binaries
 -- local previewers = require("telescope.previewers")
 -- local Job = require("plenary.job")
@@ -91,7 +98,15 @@ telescope.setup {
 
 }
 
--- require("project_nvim").setup {}
+
+project.setup({
+
+    -- detection_methods = { "lsp", "pattern" }, -- NOTE: lsp detection will get annoying with multiple langs in one project
+    detection_methods = { "pattern" },
+
+    -- patterns used to detect root dir, when **"pattern"** is in detection_methods
+    patterns = { ".git", "Makefile", "package.json" },
+})
 
 telescope.load_extension('fzf')
 telescope.load_extension('projects')
