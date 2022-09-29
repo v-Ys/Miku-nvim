@@ -4,7 +4,7 @@ if not status_ok then
     return
 end
 
-return require('packer').startup({ function()
+return packer.startup({ function()
     -- provided appimage.
     use 'lewis6991/impatient.nvim'
     -- Packer can manage itself
@@ -46,9 +46,9 @@ return require('packer').startup({ function()
 
     --Telescope
     use 'nvim-telescope/telescope.nvim'
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = "make", }
     use 'nvim-lua/plenary.nvim' --"telescope rely on it
     use 'ahmedkhalf/project.nvim' --project
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlight

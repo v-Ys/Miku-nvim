@@ -64,7 +64,6 @@ local keymaps = {
         --hop
         ["gf"]         = "<cmd>HopWord<CR>",
         --n vim tree
-        -- ["<leader>n"]  = "<cmd>NvimTreeToggle<CR>",
         ["<leader>n"]  = "<cmd>NeoTreeFloatToggle<CR>",
     },
 
