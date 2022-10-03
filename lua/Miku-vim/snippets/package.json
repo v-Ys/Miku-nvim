@@ -6,8 +6,8 @@
   "contributes": {
     "snippets": [
       {
-        "language": "json",
-        "path": "./demo.json"
+        "language": "cmake",
+        "path": "./cmake.json"
       }
     ]
   }

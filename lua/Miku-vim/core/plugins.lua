@@ -16,9 +16,9 @@ return packer.startup({ function()
     use 'Th3Whit3Wolf/one-nvim'
     use 'ishan9299/nvim-solarized-lua'
     use { 'dracula/vim', as = 'dracula' }
-    -- use 'sainnhe/everforest'
-    -- use 'sainnhe/gruvbox-material'
-    -- use 'sainnhe/edge'
+    use 'sainnhe/everforest'
+    use 'sainnhe/gruvbox-material'
+    use 'sainnhe/edge'
     use { 'sonph/onehalf', rtp = 'vim' }
     use 'EdenEast/nightfox.nvim'
     use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
