@@ -45,7 +45,7 @@ local keymaps = {
         --buffers
         ["{"]          = ":bn<CR>",
         ["}"]          = ":bp<CR>",
-        ["<leader>]"]  = ":bd<CR>",
+        ["<c-[>"]  = ":bd<CR>",
         --cancel the highlight
         ["<leader>q"]  = ":nohl<CR>",
         --dashboad
