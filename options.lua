@@ -56,7 +56,7 @@ vim.cmd(
 -- 'colorscheme solarized'
 -- 'colorscheme mariana'
 -- 'colorscheme dracula'
- 'colorscheme github_light'
+    'colorscheme github_light'
 -- 'colorscheme github_dark'
 -- 'colorscheme onehalflight'
 -- 'colorscheme onehalfdark'
