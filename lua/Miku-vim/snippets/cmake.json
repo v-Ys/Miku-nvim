@@ -2,8 +2,8 @@
   "root_dir_cmake": {
     "prefix": "cmk",
     "body": [
-        "set(CMAKE_EXPORT_COMPILE_COMMANDS ON)",
-        "cmake_minimum_required(VERSION 3.10)",
+        "SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)",
+        "CMAKE_MINIMUM_REQUIRED(VERSION 3.10)",
         "PROJECT (${HELLO})",
         "ADD_SUBDIRECTORY(src bin)"
     ],
@@ -12,18 +12,19 @@
   "src_dir_cmake": {
     "prefix": "src",
     "body": [
-        "add_subdirectory(lib)",
-        "ADD_EXECUTABLE(${hello} main.c)",
-        "TARGET_INCLUDE_DIRECTORIES(${main} PUBLIC lib)",
-        "target_link_libraries(${main} ${hello_lib})"
+        "ADD_SUBDIRECTORY(lib)",
+        "ADD_EXECUTABLE(${main} main.c)",
+        "TARGET_INCLUDE_DIRECTORIES(${main} PUBLIC include)",
+        "TARGET_LINK_LIBRARIES(${main} ${hello_lib})"
     ],
     "description": "SRC CMAKE"
   },
   "lib_dir_cmake": {
     "prefix": "lib",
     "body": [
-        "aux_source_directory(. DIR_LIB_SRCS)",
-        "add_library (${hello_lib} ${${DIR_LIB_SRCS}})"
+        "AUX_SOURCE_DIRECTORY(. DIR_LIB_SRCS)",
+        "ADD_LIBRARY(${hello_lib} ${${DIR_LIB_SRCS}})",
+        "TARGET_INCLUDE_DIRECTORIES(${hello_lib} PUBLIC ../include)"
     ],
     "description": "LIB CMAKE"
   }

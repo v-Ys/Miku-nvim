@@ -77,6 +77,9 @@ telescope.setup {
         live_grep = {
             find_command = { "rg" },
         },
+        lsp_references = {
+            theme = "cursor",
+        },
 
 
     },

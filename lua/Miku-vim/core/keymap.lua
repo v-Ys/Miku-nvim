@@ -45,9 +45,11 @@ local keymaps = {
         --buffers
         ["{"]          = ":bn<CR>",
         ["}"]          = ":bp<CR>",
-        ["<c-[>"]  = ":bd<CR>",
+        ["<c-]>"]      = ":bd<CR>",
         --cancel the highlight
         ["<leader>q"]  = ":nohl<CR>",
+        --save and format
+        ["<c-s>"]      = "<cmd>Format<CR><cmd>w<CR>",
         --dashboad
         ["<Leader>ss"] = ":<C-u>SessionSave<CR>",
         ["<Leader>sl"] = ":<C-u>SessionLoad<CR>",
@@ -61,6 +63,7 @@ local keymaps = {
         ["<Leader>fM"] = "<cmd>TodoTelescope<CR>",
         ["<Leader>fs"] = "<cmd>Telescope colorscheme<CR>",
         ["<Leader>fp"] = "<cmd>Telescope projects<CR>",
+        ["<Leader>gr"] = "<cmd>Telescope lsp_references<CR>",
         --hop
         ["gf"]         = "<cmd>HopWord<CR>",
         --n vim tree
