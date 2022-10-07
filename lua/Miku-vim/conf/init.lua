@@ -10,4 +10,4 @@ require 'Miku-vim.conf.indentline'
 require 'Miku-vim.conf.sundry'
 require 'Miku-vim.conf.neotree'
 require 'Miku-vim.conf.toggleterm'
-
+require 'Miku-vim.conf.bufferline'

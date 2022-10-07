@@ -8,11 +8,11 @@ if not config_status_ok then
     return
 end
 
-local tree_cb=nvim_tree_config.nvim_tree_callback
+local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
     update_focused_file = {
-        enable = true,
+                enable = true,
         update_cwd = true,
     },
     renderer = {
@@ -64,7 +64,7 @@ nvim_tree.setup {
                 { key = "r", action = "rename" },
                 { key = "R", action = "full_rename" },
                 { key = "h", action = "dir_up" },
-                { key = "v", cb =  tree_cb "vsplit" },
+                { key = "v", cb = tree_cb "vsplit" },
             },
         },
     },

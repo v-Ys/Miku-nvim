@@ -27,7 +27,7 @@ return packer.startup({ function()
     use 'nvim-lualine/lualine.nvim' --lualine
     use 'glepnir/dashboard-nvim' --welcome
     use 'lukas-reineke/indent-blankline.nvim' --indentline
-
+    use { 'akinsho/bufferline.nvim', tag = "v2.*" }
     --cmp
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer' -- buffer completions
@@ -48,7 +48,7 @@ return packer.startup({ function()
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim' --"telescope rely on it
     use 'ahmedkhalf/project.nvim' --project
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlight
@@ -66,6 +66,7 @@ return packer.startup({ function()
     use { "akinsho/toggleterm.nvim", tag = '*', }
     use { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x", }
     use "MunifTanjim/nui.nvim" --for neotree
+    -- use "Pocco81/auto-save.nvim"
     -- use "norcalli/nvim-colorizer.lua" -- show color
 
 end,

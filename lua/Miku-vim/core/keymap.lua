@@ -49,7 +49,7 @@ local keymaps = {
         --cancel the highlight
         ["<leader>q"]  = ":nohl<CR>",
         --save and format
-        ["<c-s>"]      = "<cmd>Format<CR><cmd>w<CR>",
+        ["<c-s>"]      = "<cmd>w<CR>",
         --dashboad
         ["<Leader>ss"] = ":<C-u>SessionSave<CR>",
         ["<Leader>sl"] = ":<C-u>SessionLoad<CR>",

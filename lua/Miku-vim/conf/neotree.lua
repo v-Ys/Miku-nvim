@@ -2,7 +2,7 @@ local status_ok, neotree = pcall(require, "neo-tree")
 if not status_ok then return end
 
 neotree.setup({
-    close_if_last_window = true, 
+    close_if_last_window = true,
     popup_border_style = "rounded",
     enable_diagnostics = false,
     default_component_configs = {
