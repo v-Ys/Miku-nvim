@@ -52,12 +52,15 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
+--Colorscheme
+-- vim.g.catppuccin_flavour = "frappe" -- latte, frappe
 vim.cmd(
 -- 'colorscheme dracula'
 -- 'colorscheme solarized'
 -- 'colorscheme mariana'
 -- 'colorscheme dracula'
- 'colorscheme github_light'
+    'colorscheme github_light'
+--"colorscheme catppuccin"
 -- 'colorscheme github_dark'
 -- 'colorscheme onehalflight'
 -- 'colorscheme onehalfdark'
