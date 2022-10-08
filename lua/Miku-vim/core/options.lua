@@ -53,7 +53,7 @@ for k, v in pairs(options) do
 end
 
 --Colorscheme
--- vim.g.catppuccin_flavour = "frappe" -- latte, frappe
+vim.g.catppuccin_flavour = "frappe" -- latte, frappe
 vim.cmd(
 -- 'colorscheme dracula'
 -- 'colorscheme solarized'
