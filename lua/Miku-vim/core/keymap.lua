@@ -25,8 +25,8 @@ local keymaps = {
 
     normal_mode = {
         -- Resize with arrows
-        ["<A-Up>"]    = ":resize -2<CR>",
-        ["<A-Down>"]  = ":resize +2<CR>",
+        ["<A-Up>"]    = ":resize +2<CR>",
+        ["<A-Down>"]  = ":resize -2<CR>",
         ["<A-Left>"]  = ":vertical resize -2<CR>",
         ["<A-Right>"] = ":vertical resize +2<CR>",
 

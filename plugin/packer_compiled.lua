@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["auto-save.nvim"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
-    url = "https://github.com/Pocco81/auto-save.nvim"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -129,16 +124,6 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
   },
-  edge = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/edge",
-    url = "https://github.com/sainnhe/edge"
-  },
-  everforest = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -148,11 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
-  },
-  ["gruvbox-material"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/gruvbox-material",
-    url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["hop.nvim"] = {
     loaded = true,
@@ -173,11 +153,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["mariana.vim"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/mariana.vim",
-    url = "https://github.com/sthendev/mariana.vim"
   },
   ["mason.nvim"] = {
     loaded = true,
@@ -204,6 +179,11 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
+  nvim = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -223,11 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-solarized-lua"] = {
-    loaded = true,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/nvim-solarized-lua",
-    url = "https://github.com/ishan9299/nvim-solarized-lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,

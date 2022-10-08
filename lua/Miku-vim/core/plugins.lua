@@ -12,16 +12,13 @@ return packer.startup({ function()
 
 
     --theme
-    use { 'sthendev/mariana.vim', run = 'make' }
     use 'Th3Whit3Wolf/one-nvim'
-    use 'ishan9299/nvim-solarized-lua'
+    -- If you are using Packer
     use { 'dracula/vim', as = 'dracula' }
-    use 'sainnhe/everforest'
-    use 'sainnhe/gruvbox-material'
-    use 'sainnhe/edge'
     use { 'sonph/onehalf', rtp = 'vim' }
     use 'EdenEast/nightfox.nvim'
     use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
+    use "catppuccin/nvim"
 
     use 'kyazdani42/nvim-web-devicons' --icons
     use 'nvim-lualine/lualine.nvim' --lualine
@@ -60,9 +57,8 @@ return packer.startup({ function()
     use 'tpope/vim-repeat' -- enhance '.' for surround
     use 'ethanholz/nvim-lastplace' --lastplace
     use 'folke/todo-comments.nvim' --TODO:
+
     use 'phaazon/hop.nvim' --easy motion
-
-
     use { "akinsho/toggleterm.nvim", tag = '*', }
     use { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x", }
     use "MunifTanjim/nui.nvim" --for neotree
