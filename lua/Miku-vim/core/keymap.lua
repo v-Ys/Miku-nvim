@@ -104,6 +104,7 @@ local keymaps = {
         },
 
         command_mode = {
+                [";;"] = "lua require('Miku-vim.core.fun').btop()",
         },
 }
 --Remap space as leader key

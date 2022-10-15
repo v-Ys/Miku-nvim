@@ -1,5 +1,9 @@
 local M = {}
+--for btop
+local Terminal = require("toggleterm.terminal").Terminal
+local btop = Terminal:new({ cmd = "btop", hidden = true })
 
+-- for run
 local RUN = {
 
         c = function()
@@ -20,10 +24,7 @@ local RUN = {
 
 }
 
-
-local Terminal = require("toggleterm.terminal").Terminal
-local btop = Terminal:new({ cmd = "btop", hidden = true })
-function BTOP()
+M.btop = function()
         btop:toggle()
 end
 

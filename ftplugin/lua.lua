@@ -1,1 +1,1 @@
-vim.opt.shiftwidth = 8
+vim.api.nvim_buf_set_option(0, 'shiftwidth', 8)
