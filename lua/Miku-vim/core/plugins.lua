@@ -40,6 +40,8 @@ return packer.startup({ function()
         use 'neovim/nvim-lspconfig' -- enable LSP
         use 'williamboman/mason.nvim' --install lsp server
         use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters
+        use 'ray-x/lsp_signature.nvim'
+
 
         --Telescope
         use 'nvim-telescope/telescope.nvim'
@@ -64,9 +66,9 @@ return packer.startup({ function()
         use "MunifTanjim/nui.nvim" --for neotree
         -- use "norcalli/nvim-colorizer.lua" -- show color
 
+        --markdown
         use { 'iamcco/markdown-preview.nvim', ft = "markdown" }
         use { 'ybian/smartim', ft = "markdown", lock = true }
-        use { "Pocco81/auto-save.nvim", config = function() require("auto-save").setup {} end, ft = "markdown" }
         use { 'dhruvasagar/vim-table-mode', ft = "markdown" }
 end,
         --NOTE: Packer config

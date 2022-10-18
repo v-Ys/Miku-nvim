@@ -84,14 +84,6 @@ _G.packer_plugins = {
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["auto-save.nvim"] = {
-    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14auto-save\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/Miku/.local/share/nvim/site/pack/packer/opt/auto-save.nvim",
-    url = "https://github.com/Pocco81/auto-save.nvim"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -156,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/Users/Miku/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -319,7 +316,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'auto-save.nvim', 'vim-table-mode', 'smartim', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'smartim', 'vim-table-mode', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 

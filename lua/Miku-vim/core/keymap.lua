@@ -45,8 +45,8 @@ local keymaps = {
                 [">"]          = ">>",
                 ["<leader>u"]  = "J",
                 --buffers
-                ["}"]          = ":BufferLineCycleNext<CR>",
-                ["{"]          = ":BufferLineCyclePre<CR>",
+                ["<A-]>"]      = ":BufferLineCycleNext<CR>",
+                ["<A-[>"]      = ":BufferLineCyclePre<CR>",
                 ["<c-]>"]      = ":bd<CR>",
                 --cancel the highlight
                 ["<leader>q"]  = ":nohl<CR>",
