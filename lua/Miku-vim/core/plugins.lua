@@ -16,9 +16,9 @@ return packer.startup({ function()
         -- If you are using Packer
         use { 'dracula/vim', as = 'dracula' }
         use { 'sonph/onehalf', rtp = 'vim' }
-        use 'EdenEast/nightfox.nvim'
+        use { 'EdenEast/nightfox.nvim', lock = true }
         use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
-        use "catppuccin/nvim"
+        use { "catppuccin/nvim", lock = true }
 
         use 'kyazdani42/nvim-web-devicons' --icons
         use 'nvim-lualine/lualine.nvim' --lualine
@@ -61,6 +61,7 @@ return packer.startup({ function()
         use 'folke/todo-comments.nvim' --TODO:
 
         use 'phaazon/hop.nvim' --easy motion
+        use 'ggandor/leap.nvim' --easy motion
         use { "akinsho/toggleterm.nvim", tag = '*', }
         use { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x", }
         use "MunifTanjim/nui.nvim" --for neotree
@@ -70,13 +71,24 @@ return packer.startup({ function()
         use { 'iamcco/markdown-preview.nvim', ft = "markdown" }
         use { 'ybian/smartim', ft = "markdown", lock = true }
         use { 'dhruvasagar/vim-table-mode', ft = "markdown" }
+
 end,
         --NOTE: Packer config
         config = {
                 -- compile_path = vim.fn.stdpath "data" .. "/plugin",
+                auto_clean = true,
+                compile_on_sync = true,
+                git = { clone_timeout = 6000 },
                 display = {
+                        working_sym = "",
+                        error_sym = "",
+                        done_sym = "﫟",
+                        removed_sym = "",
+                        moved_sym = "",
                         open_fn = function()
                                 return require('packer.util').float({ border = 'rounded' })
                         end
                 }
-        } })
+
+        }
+})

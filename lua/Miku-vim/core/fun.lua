@@ -34,4 +34,8 @@ M.run = function()
         RUN[ftp]()
 end
 
+M.FormatJSON = function()
+        vim.cmd("%!python -m json.tool")
+end
+
 return M

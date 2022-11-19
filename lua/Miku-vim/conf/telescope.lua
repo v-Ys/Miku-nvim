@@ -68,7 +68,7 @@ telescope.setup {
                 },
                 fd = {
                         -- find_command = { "find", "-type", "f" },
-                        -- find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+                        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
                 },
 
                 colorscheme = {
@@ -79,7 +79,11 @@ telescope.setup {
                 },
                 lsp_references = {
                         theme = "cursor",
+                        -- theme = "command_pane",
                 },
+                commands = {
+                        theme = "dropdown",
+                }
 
 
         },
@@ -106,7 +110,7 @@ project.setup {
         detection_methods = { "pattern" },
 
         -- patterns used to detect root dir, when **"pattern"** is in detection_methods
-        patterns = { ".git", "Makefile", },
+        patterns = { ".git", },
         manual_mode = true,
 }
 

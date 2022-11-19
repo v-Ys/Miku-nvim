@@ -21,6 +21,7 @@ local mode_adapters = {
 local keymaps = {
         insert_mode = {
 
+                ["<A-s>"] = "<cmd>w<CR>",
         },
 
         normal_mode = {
@@ -33,8 +34,8 @@ local keymaps = {
                 ["<A-Right>"] = ":vertical resize +2<CR>",
 
                 -- Move current line / block
-                ["<A-w>"] = ":m .-2<CR>==",
-                ["<A-s>"] = ":m .+1<CR>==",
+                -- ["<c-=>"] = ":m .+1<CR>==",
+                -- ["<c-->"] = ":m .-2<CR>==",
 
                 -- -- Better move
                 ["K"]          = "4k",
@@ -51,7 +52,7 @@ local keymaps = {
                 --cancel the highlight
                 ["<leader>q"]  = ":nohl<CR>",
                 --save and format
-                ["<c-s>"]      = "<cmd>w<CR>",
+                ["<A-s>"]      = "<cmd>w<CR>",
                 --dashboad
                 ["<Leader>ss"] = ":<C-u>SessionSave<CR>",
                 ["<Leader>sl"] = ":<C-u>SessionLoad<CR>",
@@ -66,8 +67,10 @@ local keymaps = {
                 ["<Leader>fs"] = "<cmd>Telescope colorscheme<CR>",
                 ["<Leader>fp"] = "<cmd>Telescope projects<CR>",
                 ["<Leader>gr"] = "<cmd>Telescope lsp_references<CR>",
-                --hop
-                ["gf"]         = "<cmd>HopWord<CR>",
+                ["<Leader>fr"] = "<cmd>Telescope commands<CR>",
+                --leap
+                ["f"]          = "<Plug>(leap-forward-to)",
+                ["gf"]         = "<Plug>(leap-backward-to)",
                 --n vim tree
                 ["<leader>n"]  = "<cmd>NeoTreeFloatToggle<CR>",
         },
@@ -83,9 +86,11 @@ local keymaps = {
         },
 
         visual_mode = {
+
+                ["<A-s>"] = "<cmd>w<CR>",
                 -- Better indenting
-                ["<"] = "<gv",
-                [">"] = ">gv",
+                ["<"]     = "<gv",
+                [">"]     = ">gv",
 
                 ["K"] = "3k",
                 ["J"] = "3j",
@@ -104,13 +109,14 @@ local keymaps = {
         },
 
         command_mode = {
-                [";;"] = "lua require('Miku-vim.core.fun').btop()",
+                [";;"] = "lua require('Miku-vim.core.fun').()",
         },
 }
---Remap space as leader key
-vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+--CMD
+-- vim.cmd([[ command! Btop execute 'lua require('~/.config/nvim/lua/Miku-vim/core/fun').btop()' ]])
 
 --load keymaps
 for mode, map in pairs(keymaps) do
