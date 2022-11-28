@@ -10,15 +10,16 @@ return packer.startup({ function()
         -- Packer can manage itself
         use 'wbthomason/packer.nvim'
 
-
         --theme
         use 'Th3Whit3Wolf/one-nvim'
-        -- If you are using Packer
         use { 'dracula/vim', as = 'dracula' }
         use { 'sonph/onehalf', rtp = 'vim' }
         use { 'EdenEast/nightfox.nvim', lock = true }
         use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
         use { "catppuccin/nvim", lock = true }
+        use { "sainnhe/everforest", lock = true }
+        use { "sainnhe/gruvbox-material", lock = true }
+        use { "sainnhe/edge" }
 
         use 'kyazdani42/nvim-web-devicons' --icons
         use 'nvim-lualine/lualine.nvim' --lualine
