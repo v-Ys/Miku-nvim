@@ -20,6 +20,7 @@ return packer.startup({ function()
         use { "sainnhe/everforest", lock = true }
         use { "sainnhe/gruvbox-material", lock = true }
         use { "sainnhe/edge" }
+        use 'folke/tokyonight.nvim'
 
         use 'kyazdani42/nvim-web-devicons' --icons
         use 'nvim-lualine/lualine.nvim' --lualine
