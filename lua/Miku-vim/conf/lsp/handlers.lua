@@ -6,7 +6,7 @@ M.setup = function()
                 { name = "DiagnosticSignWarn", text = "" },
                 { name = "DiagnosticSignHint", text = "礼" },
                 { name = "DiagnosticSignInfo", text = "" },
-                --      礼   
+                --      礼    ▎
         }
 
         for _, sign in ipairs(signs) do

@@ -73,6 +73,7 @@ return packer.startup({ function()
         use { 'iamcco/markdown-preview.nvim', ft = "markdown" }
         use { 'ybian/smartim', ft = "markdown", lock = true }
         use { 'dhruvasagar/vim-table-mode', ft = "markdown" }
+        use { 'lervag/vimtex', ft = "tex" }
 
 end,
         --NOTE: Packer config

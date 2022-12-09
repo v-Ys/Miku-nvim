@@ -31,6 +31,7 @@ end
 M.run = function()
         --get current buffer filetype
         local ftp = vim.bo.filetype
+        --RUN
         RUN[ftp]()
 end
 
