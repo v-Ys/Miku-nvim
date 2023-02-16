@@ -4,5 +4,5 @@ if not status_ok then
 end
 require "Miku-vim.conf.lsp.config"
 require "Miku-vim.conf.lsp.null-ls"
-require "Miku-vim.conf.lsp.lsp_signature"
+-- require "Miku-vim.conf.lsp.lsp_signature"
 require("Miku-vim.conf.lsp.handlers").setup()

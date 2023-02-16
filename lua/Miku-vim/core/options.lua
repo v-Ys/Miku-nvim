@@ -51,6 +51,8 @@ local options = {
 for k, v in pairs(options) do
         vim.opt[k] = v
 end
+-- vim.cmd [[set clipboard+=unnamedplus]]
+
 
 --Colorscheme
 vim.g.everforest_background = "medium"

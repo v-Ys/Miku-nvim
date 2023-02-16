@@ -115,6 +115,8 @@ local keymaps = {
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- ToggleOnly
+
 --CMD
 -- vim.cmd([[ command! Btop execute 'lua require('~/.config/nvim/lua/Miku-vim/core/fun').btop()' ]])
 

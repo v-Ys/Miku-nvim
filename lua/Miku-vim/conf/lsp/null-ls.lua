@@ -8,9 +8,9 @@ local formatting = null_ls.builtins.formatting
 -- local completion = null_ls.builtins.completion
 
 null_ls.setup({
-        debug = false,
-        sources = {
-                formatting.autopep8, -- for python
-                -- completion.spell,
-        },
+    debug = false,
+    sources = {
+        formatting.autopep8, -- for python
+        -- completion.spell,
+    },
 })

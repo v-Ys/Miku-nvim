@@ -1,4 +1,4 @@
-require('hop').setup {}
+--require('hop').setup {}
 require('Comment').setup {}
 require('nvim-autopairs').setup {}
 require('leap') --.add_default_mappings()
