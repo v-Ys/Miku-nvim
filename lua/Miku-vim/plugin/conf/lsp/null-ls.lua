@@ -3,15 +3,14 @@ if not null_ls_status_ok then
         return
 end
 
+
 local formatting = null_ls.builtins.formatting
 -- local completion = null_ls.builtins.completion
 
 null_ls.setup({
-        debug = false,
-        sources = {
-                formatting.autopep8, -- for python
-                -- completion.spell,
-
-                -- formatting.stylua,
-        },
+    debug = false,
+    sources = {
+        formatting.autopep8, -- for python
+        -- completion.spell,
+    },
 })

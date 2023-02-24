@@ -6,24 +6,20 @@ end
 
 return packer.startup({
         function()
-                -- provided appimage.
-                use 'lewis6991/impatient.nvim'
+                -- use 'lewis6991/impatient.nvim'
                 -- Packer can manage itself
                 use 'wbthomason/packer.nvim'
 
                 --theme
-                use 'rmehri01/onenord.nvim'
-
                 use 'Th3Whit3Wolf/one-nvim'
-                use { 'dracula/vim', as = 'dracula' }
+                use { "sainnhe/edge" }
                 use { 'sonph/onehalf', rtp = 'vim' }
-                use { 'EdenEast/nightfox.nvim', lock = true }
                 use { 'projekt0n/github-nvim-theme', tag = "v0.0.4" }
+
+                use { 'EdenEast/nightfox.nvim', lock = true }
                 use { "catppuccin/nvim", lock = true }
                 use { "sainnhe/everforest", lock = true }
-                use { "sainnhe/gruvbox-material", lock = true }
-                use { "sainnhe/edge" }
-                use 'folke/tokyonight.nvim'
+                use { 'dracula/vim', as = 'dracula' }
 
                 use 'kyazdani42/nvim-web-devicons' --icons
                 use 'nvim-lualine/lualine.nvim' --lualine
@@ -78,6 +74,7 @@ return packer.startup({
                 use { 'dhruvasagar/vim-table-mode', ft = "markdown" }
                 use { 'lervag/vimtex', ft = "tex" }
 
+                --leetcode
                 use 'ianding1/leetcode.vim'
                 use 'caenrique/nvim-maximize-window-toggle'
         end,

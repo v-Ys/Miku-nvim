@@ -11,7 +11,6 @@ end
 
 
 
-
 -- disable preview binaries
 -- local previewers = require("telescope.previewers")
 -- local Job = require("plenary.job")
