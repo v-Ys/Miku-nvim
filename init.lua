@@ -1,7 +1,6 @@
 --NOTE:
 if vim.g.vscode then
-        -- require('vscode.vscode')
+        require 'vscode'
 else
-        require('Miku-vim.plugin.lazy')
-        require('Miku-vim.core')
+        require 'Miku-vim'
 end

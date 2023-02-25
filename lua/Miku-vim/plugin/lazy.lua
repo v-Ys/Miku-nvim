@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -46,7 +45,11 @@ local opts = {
                                 "‒",
                         },
                 },
+        },
+        install = {
+                colorscheme = { 'github_light' }
         }
+
 }
 
 require("lazy").setup(plugins, opts)

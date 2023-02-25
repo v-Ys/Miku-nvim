@@ -1,9 +1,9 @@
 return {
 
-        --theme
+        --NOTE: theme
         { 'Th3Whit3Wolf/one-nvim' },
         { "sainnhe/edge" },
-        -- { 'sonph/onehalf',                            rtp = 'vim' },
+        { 'sonph/onehalf', },
         {
                 'projekt0n/github-nvim-theme',
                 version = "v0.0.4",
@@ -16,20 +16,23 @@ return {
         { "sainnhe/everforest", pin = true },
         { 'dracula/vim', name = 'dracula' },
 
+        --NOTE: UI
         { 'kyazdani42/nvim-web-devicons' }, --icons
+        --lualine
         { 'nvim-lualine/lualine.nvim',
                 config = function()
                         require('Miku-vim.plugin.conf.lualine')
                 end
 
-        }, --lualine
+        },
 
+        --PLUG:alpha
         { 'goolord/alpha-nvim',
                 config = function()
                         require("Miku-vim.plugin.conf.alpha")
                 end,
         },
-
+        --PLUG:indentline
         { 'lukas-reineke/indent-blankline.nvim',
                 config = function()
                         require("indent_blankline").setup {
@@ -45,8 +48,8 @@ return {
                                 "Trouble",
                         }
                 end,
-        }, --indentline
-
+        },
+        --PLUG:bufferline
         { 'akinsho/bufferline.nvim',
                 version = "v2.*",
                 config = function()
@@ -54,7 +57,7 @@ return {
                 end,
         },
 
-        --cmp
+        --PLUG:cmp
         { 'hrsh7th/nvim-cmp',
                 dependencies = {
                         { 'hrsh7th/cmp-nvim-lsp' }, --for lsp
@@ -66,69 +69,74 @@ return {
                         require("Miku-vim.plugin.conf.cmp")
                 end,
         },
-        --snip,
+        --PLUG:snip,
         { 'saadparwaiz1/cmp_luasnip' },
         { 'L3MON4D3/LuaSnip' }, --snippet engine
         { 'rafamadriz/friendly-snippets' }, -- a bunch of snippets to
 
-        --LSP
-        { 'williamboman/mason.nvim' }, --install lsp server
-        { "jose-elias-alvarez/null-ls.nvim" }, --  commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters
-        { 'ray-x/lsp_signature.nvim', },
+        --PLUG:LSP
         { 'neovim/nvim-lspconfig',
-
+                dependencies = {
+                        { 'williamboman/mason.nvim' }, -- install lsp server
+                        { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
+                        { 'ray-x/lsp_signature.nvim', }, -- fun signature
+                },
                 config = function()
                         require("Miku-vim.plugin.conf.lsp")
                 end,
-        }, -- enable LSP
+        },
 
 
-        --Telescope,
+        --PLUG:Telescope,
         {
                 'nvim-telescope/telescope.nvim',
                 dependencies = {
                         { 'nvim-lua/plenary.nvim' },
+                        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+                        { 'ahmedkhalf/project.nvim' }, --project
                 },
                 config = function()
                         require('Miku-vim.plugin.conf.telescope')
                 end
         },
-        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-        { 'ahmedkhalf/project.nvim' }, --project
 
 
-        -- treesitter
+        --PLUG: treesitter
         { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
 
                 dependencies =
-                { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' }, --fold
+                { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' }, --for fold
                 config = function()
                         require('Miku-vim.plugin.conf.treesitter')
                 end,
-        }, --better syntax highlight
+        },
 
+        --PLUG: autopairs
         { 'windwp/nvim-autopairs',
                 config = function()
-                        require("nvim-autopairs")
+                        require("nvim-autopairs").setup()
                 end,
         },
+
+        --PLUG: comment
         { 'numToStr/Comment.nvim',
                 config = function()
                         require("Comment").setup()
                 end,
         }, --comment
 
-        -- vim surround
+
+        --PLUG: vim surround
         { 'tpope/vim-surround',
                 config = function()
                 end,
         },
-        -- enhance '.' for surround
+        --PLUG: enhance '.' for surround
         { 'tpope/vim-repeat',
                 config = function()
                 end,
         },
-        --lastplace
+        --PLUG: lastplace
         { 'ethanholz/nvim-lastplace',
                 config = function()
                         require 'nvim-lastplace'.setup {
@@ -139,12 +147,13 @@ return {
                 end,
 
         },
+        --PLUG: todo
         { 'folke/todo-comments.nvim',
                 config = function()
                         require("Miku-vim.plugin.conf.todo")
-                end, }, --TODO:
+                end, },
 
-        --easy motion
+        --PLUG: easy motion
         { 'ggandor/leap.nvim',
                 config = function()
 
@@ -154,6 +163,7 @@ return {
                                 'q', 'x', 'b' }
                 end,
         },
+        --PLUG: toggleterm
         { "akinsho/toggleterm.nvim", version = '*',
 
                 config = function()
@@ -161,25 +171,24 @@ return {
                 end,
 
         },
+        --PLUG: neotree
         { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x",
                 dependencies = "MunifTanjim/nui.nvim", --for neotree
                 config = function()
                         require("Miku-vim.plugin.conf.neotree")
                 end,
         },
-        --   { "norcalli/nvim-colorizer.lua" }, -- show color
+        -- { "norcalli/nvim-colorizer.lua" }, -- show color
 
 
-        --leetcode
+        --PLUG: leetcode
         { 'ianding1/leetcode.vim',
+                dependencies = 'caenrique/nvim-maximize-window-toggle',
                 config = function()
                         vim.g.leetcode_browser = 'chrome'
                         vim.g.leetcode_solution_filetype = 'rust'
                 end,
-                lazy = true,
-        },
-        { 'caenrique/nvim-maximize-window-toggle',
-                lazy = true,
+                cmd = "LeetCode",
         },
 
 }
