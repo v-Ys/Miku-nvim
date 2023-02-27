@@ -4,10 +4,10 @@ if not status_ok then
         return
 end
 
-local status_oks, project = pcall(require, "project_nvim")
-if not status_oks then
-        return
-end
+-- local status_oks, project = pcall(require, "project_nvim")
+-- if not status_oks then
+--         return
+-- end
 
 
 
@@ -97,6 +97,22 @@ telescope.setup {
                         override_file_sorter = true, -- override the file sorter
                         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
                 },
+                project = {
+                        base_dirs = {
+                                -- '~/Code',
+                                { '~/.config/nvim' },
+                                -- { '~/code', max_depth = 1 },
+                                -- { '~/dev/src3', max_depth = 4 },
+                                { path = '~/Code' },
+                                -- { path = '~/dev/src5', max_depth = 2 },
+                        },
+                        hidden_files = true, -- default: false
+                        -- theme = "dropdown",
+                        theme = "ivy",
+                        order_by = "asc",
+                        search_by = "title",
+                        sync_with_nvim_tree = true, -- default false
+                }
 
         },
 
@@ -104,15 +120,15 @@ telescope.setup {
 }
 
 
-project.setup {
-
-        -- detection_methods = { "lsp", "pattern" }, -- NOTE: lsp detection will get annoying with multiple langs in one project
-        detection_methods = { "pattern" },
-
-        -- patterns used to detect root dir, when **"pattern"** is in detection_methods
-        patterns = { ".git", "CMakeLists.txt" },
-        manual_mode = true,
-}
+-- project.setup {
+--
+--         -- detection_methods = { "lsp", "pattern" }, -- NOTE: lsp detection will get annoying with multiple langs in one project
+--         detection_methods = { "pattern" },
+--
+--         -- patterns used to detect root dir, when **"pattern"** is in detection_methods
+--         patterns = { ".git", "CMakeLists.txt" },
+--         manual_mode = true,
+-- }
 
 telescope.load_extension('fzf')
-telescope.load_extension('projects')
+telescope.load_extension('project')

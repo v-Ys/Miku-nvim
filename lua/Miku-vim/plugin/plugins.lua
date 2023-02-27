@@ -1,5 +1,4 @@
 return {
-
         --NOTE: theme
         { 'Th3Whit3Wolf/one-nvim' },
         { "sainnhe/edge" },
@@ -9,6 +8,7 @@ return {
                 version = "v0.0.4",
                 config = function()
                         vim.cmd([[colorscheme github_light]])
+                        -- vim.cmd([[colorscheme github_dark]])
                 end,
         },
         { 'EdenEast/nightfox.nvim', pin = true },
@@ -19,7 +19,8 @@ return {
         --NOTE: UI
         { 'kyazdani42/nvim-web-devicons' }, --icons
         --lualine
-        { 'nvim-lualine/lualine.nvim',
+        {
+                'nvim-lualine/lualine.nvim',
                 config = function()
                         require('Miku-vim.plugin.conf.lualine')
                 end
@@ -27,13 +28,15 @@ return {
         },
 
         --PLUG:alpha
-        { 'goolord/alpha-nvim',
+        {
+                'goolord/alpha-nvim',
                 config = function()
                         require("Miku-vim.plugin.conf.alpha")
                 end,
         },
         --PLUG:indentline
-        { 'lukas-reineke/indent-blankline.nvim',
+        {
+                'lukas-reineke/indent-blankline.nvim',
                 config = function()
                         require("indent_blankline").setup {
                                 show_end_of_line = true,
@@ -50,7 +53,8 @@ return {
                 end,
         },
         --PLUG:bufferline
-        { 'akinsho/bufferline.nvim',
+        {
+                'akinsho/bufferline.nvim',
                 version = "v2.*",
                 config = function()
                         require("Miku-vim.plugin.conf.bufferline")
@@ -58,7 +62,8 @@ return {
         },
 
         --PLUG:cmp
-        { 'hrsh7th/nvim-cmp',
+        {
+                'hrsh7th/nvim-cmp',
                 dependencies = {
                         { 'hrsh7th/cmp-nvim-lsp' }, --for lsp
                         { 'hrsh7th/cmp-buffer' }, -- buffer completions
@@ -69,11 +74,19 @@ return {
                         require("Miku-vim.plugin.conf.cmp")
                 end,
         },
-        --PLUG:snip,
-        { 'saadparwaiz1/cmp_luasnip' },
-        { 'L3MON4D3/LuaSnip' }, --snippet engine
-        { 'rafamadriz/friendly-snippets' }, -- a bunch of snippets to
 
+        --NOTE:snip,
+        {
+                'saadparwaiz1/cmp_luasnip',
+        },
+        --snippet engine
+        {
+                'L3MON4D3/LuaSnip',
+        },
+        -- a bunch of snippets to
+        {
+                'rafamadriz/friendly-snippets',
+        },
         --PLUG:LSP
         { 'neovim/nvim-lspconfig',
                 dependencies = {
@@ -85,78 +98,83 @@ return {
                         require("Miku-vim.plugin.conf.lsp")
                 end,
         },
-
-
         --PLUG:Telescope,
         {
                 'nvim-telescope/telescope.nvim',
                 dependencies = {
                         { 'nvim-lua/plenary.nvim' },
-                        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-                        { 'ahmedkhalf/project.nvim' }, --project
+                        { 'nvim-telescope/telescope-project.nvim' }, --project },
+                        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', },
                 },
                 config = function()
                         require('Miku-vim.plugin.conf.telescope')
                 end
         },
-
-
         --PLUG: treesitter
-        { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
+        {
+                'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
 
-                dependencies =
-                { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' }, --for fold
+                dependencies = {
+                        'kevinhwang91/nvim-ufo',
+                        dependencies = 'kevinhwang91/promise-async'
+                }, --for fold
                 config = function()
                         require('Miku-vim.plugin.conf.treesitter')
                 end,
         },
-
         --PLUG: autopairs
-        { 'windwp/nvim-autopairs',
-                config = function()
-                        require("nvim-autopairs").setup()
-                end,
+        {
+                'windwp/nvim-autopairs',
+                config = true,
         },
-
         --PLUG: comment
-        { 'numToStr/Comment.nvim',
-                config = function()
-                        require("Comment").setup()
-                end,
-        }, --comment
-
-
+        {
+                'numToStr/Comment.nvim',
+                config = true,
+        },
         --PLUG: vim surround
-        { 'tpope/vim-surround',
-                config = function()
-                end,
+        {
+                'tpope/vim-surround',
         },
         --PLUG: enhance '.' for surround
-        { 'tpope/vim-repeat',
-                config = function()
-                end,
+        {
+                'tpope/vim-repeat',
         },
         --PLUG: lastplace
-        { 'ethanholz/nvim-lastplace',
-                config = function()
-                        require 'nvim-lastplace'.setup {
-                                lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
-                                lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
-                                lastplace_open_folds = true
-                        }
-                end,
+        {
+                'ethanholz/nvim-lastplace',
+                opts = {
+
+                        lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+                        lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+                        lastplace_open_folds = true
+                },
 
         },
         --PLUG: todo
-        { 'folke/todo-comments.nvim',
-                config = function()
-                        require("Miku-vim.plugin.conf.todo")
-                end, },
+        {
+                'folke/todo-comments.nvim',
+                opts = {
 
+                        keywords = {
+                                -- alt ： 别名
+                                FIX = {
+                                        icon = " ",
+                                        color = "#C0392B",
+                                        alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "!" }
+                                },
+                                TODO = { icon = " ", color = "#AF7AC5", alt = { "PLUG" } },
+                                HACK = { icon = " ", color = "#7C3AED" },
+                                WARN = { icon = " ", color = "#E74C3C", alt = { "WARNING", "XXX" } },
+                                PERF = { icon = " ", color = "#5DADE2", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+                                NOTE = { icon = " ", color = "#10B981", alt = { "INFO" } }
+                        },
+                },
+        },
         --PLUG: easy motion
-        { 'ggandor/leap.nvim',
+        {
+                'ggandor/leap.nvim',
                 config = function()
-
                         require('leap').opts.safe_labels = { 'f', 'e', 'j', 'k', 'i', 'n', 'c', 'w', 'r', 'o', 'a', 's',
                                 'd', 't', 'g', 'v', 'm',
                                 'l',
@@ -164,12 +182,11 @@ return {
                 end,
         },
         --PLUG: toggleterm
-        { "akinsho/toggleterm.nvim", version = '*',
-
+        {
+                "akinsho/toggleterm.nvim", version = '*',
                 config = function()
                         require("Miku-vim.plugin.conf.toggleterm")
                 end,
-
         },
         --PLUG: neotree
         { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x",
@@ -179,10 +196,9 @@ return {
                 end,
         },
         -- { "norcalli/nvim-colorizer.lua" }, -- show color
-
-
         --PLUG: leetcode
-        { 'ianding1/leetcode.vim',
+        {
+                'ianding1/leetcode.vim',
                 dependencies = 'caenrique/nvim-maximize-window-toggle',
                 config = function()
                         vim.g.leetcode_browser = 'chrome'
