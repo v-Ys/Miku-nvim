@@ -2,7 +2,13 @@ return {
         --NOTE: theme
         { 'Th3Whit3Wolf/one-nvim' },
         { "sainnhe/edge" },
-        { 'sonph/onehalf', },
+        {
+                'sonph/onehalf',
+                config = function(plugin)
+                        vim.opt.rtp:append(plugin.dir .. "/vim")
+
+                end
+        },
         {
                 'projekt0n/github-nvim-theme',
                 version = "v0.0.4",
@@ -205,6 +211,19 @@ return {
                         vim.g.leetcode_solution_filetype = 'rust'
                 end,
                 cmd = "LeetCode",
+        },
+        --PLUG: latex
+        {
+                'lervag/vimtex',
+                -- config = true,
+                ft = "tex",
+        },
+        --PLUG: markdown
+        {
+                'iamcco/markdown-preview.nvim',
+                dependencies = 'ybian/smartim',
+                ft = 'markdown',
+
         },
 
 }

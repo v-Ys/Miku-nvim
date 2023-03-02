@@ -107,8 +107,8 @@ local keymaps = {
                 [";;"] = "lua require('Miku-vim.core.fun').()",
         },
 }
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
 
 -- ToggleOnly
 

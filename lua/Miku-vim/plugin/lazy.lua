@@ -22,29 +22,6 @@ local opts = {
                 wrap = true, -- wrap the lines in the ui
                 -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
                 border = "rounded",
-                icons = {
-                        cmd = " ",
-                        config = "",
-                        event = "",
-                        ft = " ",
-                        init = " ",
-                        import = " ",
-                        keys = " ",
-                        lazy = "󰒲 ",
-                        loaded = "●",
-                        not_loaded = "○",
-                        plugin = " ",
-                        runtime = " ",
-                        source = " ",
-                        start = "",
-                        task = "✔ ",
-                        list = {
-                                "●",
-                                "➜",
-                                "★",
-                                "‒",
-                        },
-                },
         },
         install = {
                 colorscheme = { 'github_light' }
