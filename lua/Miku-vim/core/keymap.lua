@@ -1,5 +1,4 @@
 --NOTE:
-local M = {}
 local opts = {
         insert_mode = { noremap = true, silent = true },
         normal_mode = { noremap = true, silent = true },
@@ -110,18 +109,9 @@ local keymaps = {
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
 
--- ToggleOnly
-
---CMD
--- vim.cmd([[ command! Btop execute 'lua require('~/.config/nvim/lua/Miku-vim/core/fun').btop()' ]])
-
 --load keymaps
-M.setup = function()
-        for mode, map in pairs(keymaps) do
-                for key, cmd in pairs(map) do
-                        vim.api.nvim_set_keymap(mode_adapters[mode], key, cmd, opts[mode])
-                end
+for mode, map in pairs(keymaps) do
+        for key, cmd in pairs(map) do
+                vim.api.nvim_set_keymap(mode_adapters[mode], key, cmd, opts[mode])
         end
 end
-
-return M

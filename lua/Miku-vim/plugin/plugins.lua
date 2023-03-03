@@ -164,6 +164,7 @@ return {
 
                         keywords = {
                                 -- alt ： 别名
+                                --
                                 FIX = {
                                         icon = " ",
                                         color = "#C0392B",
@@ -202,6 +203,7 @@ return {
                 end,
         },
         -- { "norcalli/nvim-colorizer.lua" }, -- show color
+
         --PLUG: leetcode
         {
                 'ianding1/leetcode.vim',
@@ -215,7 +217,6 @@ return {
         --PLUG: latex
         {
                 'lervag/vimtex',
-                -- config = true,
                 ft = "tex",
         },
         --PLUG: markdown

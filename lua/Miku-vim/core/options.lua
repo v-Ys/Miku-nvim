@@ -50,20 +50,7 @@ local options = {
 for k, v in pairs(options) do
         vim.opt[k] = v
 end
--- vim.cmd [[set clipboard+=unnamedplus]]
 
 
 --Colorscheme
--- vim.g.everforest_background = "medium"
 -- vim.g.catppuccin_flavour = "latte" -- latte, frappe
--- vim.cmd(
--- 'colorscheme dracula'
--- 'colorscheme github_light'
--- "colorscheme catppuccin"
--- 'colorscheme github_dark'
--- 'colorscheme onehalflight'
--- 'colorscheme onehalfdark'
--- 'colorscheme one-nvim'
--- 'colorscheme everforest'
--- 'colorscheme edge'
--- )
