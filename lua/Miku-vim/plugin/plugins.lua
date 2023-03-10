@@ -6,7 +6,6 @@ return {
                 'sonph/onehalf',
                 config = function(plugin)
                         vim.opt.rtp:append(plugin.dir .. "/vim")
-
                 end
         },
         {
@@ -17,10 +16,9 @@ return {
                         -- vim.cmd([[colorscheme github_dark]])
                 end,
         },
-        { 'EdenEast/nightfox.nvim', pin = true },
-        { "catppuccin/nvim", pin = true },
-        { "sainnhe/everforest", pin = true },
-        { 'dracula/vim', name = 'dracula' },
+        { "catppuccin/nvim",             name = "catppuccin" },
+        { "sainnhe/everforest",          pin = true },
+        { 'dracula/vim',                 name = 'dracula' },
 
         --NOTE: UI
         { 'kyazdani42/nvim-web-devicons' }, --icons
@@ -30,7 +28,6 @@ return {
                 config = function()
                         require('Miku-vim.plugin.conf.lualine')
                 end
-
         },
 
         --PLUG:alpha
@@ -72,9 +69,9 @@ return {
                 'hrsh7th/nvim-cmp',
                 dependencies = {
                         { 'hrsh7th/cmp-nvim-lsp' }, --for lsp
-                        { 'hrsh7th/cmp-buffer' }, -- buffer completions
-                        { 'hrsh7th/cmp-path' }, -- path completions
-                        { 'hrsh7th/cmp-cmdline' }, -- cmdline completions
+                        { 'hrsh7th/cmp-buffer' },   -- buffer completions
+                        { 'hrsh7th/cmp-path' },     -- path completions
+                        { 'hrsh7th/cmp-cmdline' },  -- cmdline completions
                 },
                 config = function()
                         require("Miku-vim.plugin.conf.cmp")
@@ -94,11 +91,12 @@ return {
                 'rafamadriz/friendly-snippets',
         },
         --PLUG:LSP
-        { 'neovim/nvim-lspconfig',
+        {
+                'neovim/nvim-lspconfig',
                 dependencies = {
-                        { 'williamboman/mason.nvim' }, -- install lsp server
+                        { 'williamboman/mason.nvim' },         -- install lsp server
                         { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
-                        { 'ray-x/lsp_signature.nvim', }, -- fun signature
+                        { 'ray-x/lsp_signature.nvim', },       -- fun signature
                 },
                 config = function()
                         require("Miku-vim.plugin.conf.lsp")
@@ -118,8 +116,8 @@ return {
         },
         --PLUG: treesitter
         {
-                'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
-
+                'nvim-treesitter/nvim-treesitter',
+                build = ':TSUpdate',
                 dependencies = {
                         'kevinhwang91/nvim-ufo',
                         dependencies = 'kevinhwang91/promise-async'
@@ -150,18 +148,15 @@ return {
         {
                 'ethanholz/nvim-lastplace',
                 opts = {
-
                         lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
                         lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
                         lastplace_open_folds = true
                 },
-
         },
         --PLUG: todo
         {
                 'folke/todo-comments.nvim',
                 opts = {
-
                         keywords = {
                                 -- alt ： 别名
                                 --
@@ -190,20 +185,28 @@ return {
         },
         --PLUG: toggleterm
         {
-                "akinsho/toggleterm.nvim", version = '*',
+                "akinsho/toggleterm.nvim",
+                version = '*',
                 config = function()
                         require("Miku-vim.plugin.conf.toggleterm")
                 end,
         },
         --PLUG: neotree
-        { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x",
+        {
+                "nvim-neo-tree/neo-tree.nvim",
+                branch = "v2.x",
                 dependencies = "MunifTanjim/nui.nvim", --for neotree
                 config = function()
                         require("Miku-vim.plugin.conf.neotree")
                 end,
         },
-        -- { "norcalli/nvim-colorizer.lua" }, -- show color
-
+        --PLUG: show color
+        -- {
+        --         "norcalli/nvim-colorizer.lua",
+        --         config = function()
+        --                 vim.opt.termguicolors = true
+        --         end
+        -- },
         --PLUG: leetcode
         {
                 'ianding1/leetcode.vim',
@@ -224,7 +227,6 @@ return {
                 'iamcco/markdown-preview.nvim',
                 dependencies = 'ybian/smartim',
                 ft = 'markdown',
-
         },
 
 }
