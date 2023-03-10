@@ -32,6 +32,129 @@ local conditions = {
         end,
 }
 
+
+local left = {
+        --NOTE: ▊
+        {
+                function()
+                        return '▊'
+                end,
+                color = { fg = colors.blue },      -- Sets highlighting of component
+                padding = { left = 0, right = 1 }, -- We don't need space before this
+        },
+        --NOTE: mode component
+        {
+                -- mode component
+                function()
+                        return ''
+                        -- return ''
+                end,
+                color = function()
+                        -- auto change color according to neovims mode
+                        local mode_color = {
+                                n = colors.red,
+                                i = colors.green,
+                                v = colors.blue,
+                                    [''] = colors.blue,
+                                V = colors.blue,
+                                c = colors.magenta,
+                                no = colors.red,
+                                s = colors.orange,
+                                S = colors.orange,
+                                    [''] = colors.orange,
+                                ic = colors.yellow,
+                                R = colors.violet,
+                                Rv = colors.violet,
+                                cv = colors.red,
+                                ce = colors.red,
+                                r = colors.cyan,
+                                rm = colors.cyan,
+                                    ['r?'] = colors.cyan,
+                                    ['!'] = colors.red,
+                                t = colors.red,
+                        }
+                        return { fg = mode_color[vim.fn.mode()] }
+                end,
+                padding = { right = 1 },
+        },
+        --NOTE: filename
+        {
+                'filename',
+                cond = conditions.buffer_not_empty,
+                color = { fg = colors.magenta, gui = 'bold' },
+                symbols = {
+                        newfile = '', -- Text to show for new created file before first writting
+                        modified = '', -- Text to show when the file is modified.
+                        readonly = '', -- Text to show when the file is non-modifiable or readonly.
+                        unnamed = '', -- Text to show for unnamed buffers.
+                }
+        },
+        --NOTE: filesize component
+        {
+                -- filesize component
+                'filesize',
+                cond = conditions.buffer_not_empty,
+        },
+        --NOTE: location
+        { 'location' },
+        --NOTE: progress
+        { 'progress', color = { fg = colors.fg, gui = 'bold' } },
+        --NOTE: diagnostics
+        {
+                'diagnostics',
+                sources = { 'nvim_diagnostic' },
+                symbols = { error = ' ', warn = ' ', info = ' ' },
+                diagnostics_color = {
+                        color_error = { fg = colors.red },
+                        color_warn = { fg = colors.yellow },
+                        color_info = { fg = colors.cyan },
+                },
+        },
+        --NOTE:
+        {
+                function()
+                        return '%='
+                end,
+        },
+
+}
+
+local right = {
+        --NOTE: filetype
+        {
+                'filetype',
+                icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+                color = { fg = colors.green, gui = 'bold' },
+        },
+        --NOTE: branch
+        {
+                'branch',
+                icon = '',
+                color = { fg = colors.violet, gui = 'bold' },
+        },
+        --NOTE: diff
+        {
+                'diff',
+                -- Is it me or the symbol for modified us really weird
+                symbols = { added = ' ', modified = ' ', removed = ' ' },
+                diff_color = {
+                        added = { fg = colors.green },
+                        modified = { fg = colors.orange },
+                        removed = { fg = colors.red },
+                },
+                cond = conditions.hide_in_width,
+        },
+        --NOTE:
+        {
+                function()
+                        return '▊'
+                end,
+                color = { fg = colors.blue },
+                padding = { left = 1 },
+        },
+
+
+}
 -- Config
 local config = {
         options = {
@@ -48,8 +171,8 @@ local config = {
                 lualine_y = {},
                 lualine_z = {},
                 -- These will be filled later
-                lualine_c = {},
-                lualine_x = {},
+                lualine_c = left,
+                lualine_x = right,
         },
         inactive_sections = {
                 -- these are to remove the defaults
@@ -62,131 +185,6 @@ local config = {
         },
 }
 
--- Inserts a component in lualine_c at left section
-local function ins_left(component)
-        table.insert(config.sections.lualine_c, component)
-end
 
--- Inserts a component in lualine_x ot right section
-local function ins_right(component)
-        table.insert(config.sections.lualine_x, component)
-end
-
-ins_left {
-        function()
-                return '▊'
-        end,
-        color = { fg = colors.blue },      -- Sets highlighting of component
-        padding = { left = 0, right = 1 }, -- We don't need space before this
-}
-
-ins_left {
-        -- mode component
-        function()
-                return ''
-                -- return ''
-        end,
-        color = function()
-                -- auto change color according to neovims mode
-                local mode_color = {
-                        n = colors.red,
-                        i = colors.green,
-                        v = colors.blue,
-                            [''] = colors.blue,
-                        V = colors.blue,
-                        c = colors.magenta,
-                        no = colors.red,
-                        s = colors.orange,
-                        S = colors.orange,
-                            [''] = colors.orange,
-                        ic = colors.yellow,
-                        R = colors.violet,
-                        Rv = colors.violet,
-                        cv = colors.red,
-                        ce = colors.red,
-                        r = colors.cyan,
-                        rm = colors.cyan,
-                            ['r?'] = colors.cyan,
-                            ['!'] = colors.red,
-                        t = colors.red,
-                }
-                return { fg = mode_color[vim.fn.mode()] }
-        end,
-        padding = { right = 1 },
-}
-
-
-ins_left {
-        'filename',
-        cond = conditions.buffer_not_empty,
-        color = { fg = colors.magenta, gui = 'bold' },
-        symbols = {
-                newfile = '', -- Text to show for new created file before first writting
-                modified = '', -- Text to show when the file is modified.
-                readonly = '', -- Text to show when the file is non-modifiable or readonly.
-                unnamed = '', -- Text to show for unnamed buffers.
-        }
-}
-
-ins_left {
-        -- filesize component
-        'filesize',
-        cond = conditions.buffer_not_empty,
-}
-
-ins_left { 'location' }
-
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
-
-ins_left {
-        'diagnostics',
-        sources = { 'nvim_diagnostic' },
-        symbols = { error = ' ', warn = ' ', info = ' ' },
-        diagnostics_color = {
-                color_error = { fg = colors.red },
-                color_warn = { fg = colors.yellow },
-                color_info = { fg = colors.cyan },
-        },
-}
-
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left {
-        function()
-                return '%='
-        end,
-}
-
-ins_right {
-        'filetype',
-        icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-        color = { fg = colors.green, gui = 'bold' },
-}
-
-
-ins_right {
-        'branch',
-        icon = '',
-        color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_right {
-        'diff',
-        -- Is it me or the symbol for modified us really weird
-        symbols = { added = ' ', modified = ' ', removed = ' ' },
-        diff_color = {
-                added = { fg = colors.green },
-                modified = { fg = colors.orange },
-                removed = { fg = colors.red },
-        },
-        cond = conditions.hide_in_width,
-}
-ins_right {
-        function()
-                return '▊'
-        end,
-        color = { fg = colors.blue },
-        padding = { left = 1 },
-}
 
 lualine.setup(config)

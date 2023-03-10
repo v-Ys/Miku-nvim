@@ -207,7 +207,6 @@ return {
         --                 vim.opt.termguicolors = true
         --         end
         -- },
-
         --PLUG: leetcode
         {
                 'ianding1/leetcode.vim',
