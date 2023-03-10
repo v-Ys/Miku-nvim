@@ -38,7 +38,8 @@ local config = {
                 -- Disable sections and component separators
                 component_separators = '',
                 section_separators = '',
-                theme = 'auto'
+                -- theme = 'auto'
+                theme = 'auto',
         },
         sections = {
                 -- these are to remove the defaults
@@ -75,7 +76,7 @@ ins_left {
         function()
                 return '▊'
         end,
-        color = { fg = colors.blue }, -- Sets highlighting of component
+        color = { fg = colors.blue },      -- Sets highlighting of component
         padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
@@ -91,13 +92,13 @@ ins_left {
                         n = colors.red,
                         i = colors.green,
                         v = colors.blue,
-                        [''] = colors.blue,
+                            [''] = colors.blue,
                         V = colors.blue,
                         c = colors.magenta,
                         no = colors.red,
                         s = colors.orange,
                         S = colors.orange,
-                        [''] = colors.orange,
+                            [''] = colors.orange,
                         ic = colors.yellow,
                         R = colors.violet,
                         Rv = colors.violet,
@@ -105,8 +106,8 @@ ins_left {
                         ce = colors.red,
                         r = colors.cyan,
                         rm = colors.cyan,
-                        ['r?'] = colors.cyan,
-                        ['!'] = colors.red,
+                            ['r?'] = colors.cyan,
+                            ['!'] = colors.red,
                         t = colors.red,
                 }
                 return { fg = mode_color[vim.fn.mode()] }
