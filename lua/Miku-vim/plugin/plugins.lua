@@ -21,7 +21,10 @@ return {
         { 'dracula/vim',                 name = 'dracula' },
 
         --NOTE: UI
-        { 'kyazdani42/nvim-web-devicons' }, --icons
+        --
+        --icons
+        { 'nvim-tree/nvim-web-devicons', },
+
         --lualine
         {
                 'nvim-lualine/lualine.nvim',
@@ -177,10 +180,8 @@ return {
         {
                 'ggandor/leap.nvim',
                 config = function()
-                        require('leap').opts.safe_labels = { 'f', 'e', 'j', 'k', 'i', 'n', 'c', 'w', 'r', 'o', 'a', 's',
-                                'd', 't', 'g', 'v', 'm',
-                                'l',
-                                'q', 'x', 'b' }
+                        require('leap').opts.safe_labels = { 'f', 'e', 'j', 'k', 'i', 'n', 'c', 'w', 'r', 'o',
+                                'a', 's', 'd', 't', 'g', 'v', 'm', 'l', 'q', 'x', 'b' }
                 end,
         },
         --PLUG: toggleterm
