@@ -87,7 +87,7 @@ return {
         },
         --snippet engine
         {
-                'L3MON4D3/LuaSnip',
+                "L3MON4D3/LuaSnip",
         },
         -- a bunch of snippets to
         {
