@@ -10,9 +10,11 @@ if not cmp_status_ok then
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
-require("luasnip.loaders.from_vscode").load({ paths = {
-        vim.fn.stdpath("config") .. "/lua/Miku-vim/snippets"
-} })
+require("luasnip.loaders.from_vscode").load({
+        paths = {
+                vim.fn.stdpath("config") .. "/lua/Miku-vim/snippets"
+        }
+})
 
 local check_backspace = function()
         local col = vim.fn.col "." - 1
@@ -22,7 +24,7 @@ end
 local kind_icons = {
         Text = "",
         Method = "m",
-        Function = "",
+        Function = "",
         Constructor = "",
         Field = "",
         Variable = "",
@@ -49,7 +51,6 @@ local kind_icons = {
 
 
 cmp.setup({
-
         snippet = {
                 expand = function(args)
                         luasnip.lsp_expand(args.body) -- load freindly-snippets
@@ -59,7 +60,6 @@ cmp.setup({
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
         },
-
         formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
@@ -67,30 +67,23 @@ cmp.setup({
                         vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
                         -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
                         vim_item.menu = ({
-                                nvim_lsp = "[LSP]",
-                                luasnip = "[Snippet]",
-                                buffer = "[Buffer]",
-                                path = "[Path]",
-                        })[entry.source.name]
+                                    nvim_lsp = "[LSP]",
+                                    luasnip = "[Snippet]",
+                                    buffer = "[Buffer]",
+                                    path = "[Path]",
+                            })[entry.source.name]
                         return vim_item
                 end,
         },
-        sources = {
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
-                { name = "buffer" },
-                { name = "path" },
-        },
-
         mapping = cmp.mapping.preset.insert {
-                ["<A-e>"] = cmp.mapping {
+                    ["<A-e>"] = cmp.mapping {
                         i = cmp.mapping.abort(),
                         c = cmp.mapping.close(),
                 },
-                ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-                ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-                ['<CR>'] = cmp.mapping.confirm({ select = true }),
-                ["<Tab>"] = cmp.mapping(function(fallback)
+                    ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+                    ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                    ["<Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                                 cmp.select_next_item()
                         elseif luasnip.expandable() then
@@ -106,7 +99,7 @@ cmp.setup({
                         "i",
                         "s",
                 }),
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
+                    ["<S-Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                                 cmp.select_prev_item()
                         elseif luasnip.jumpable(-1) then
@@ -120,7 +113,12 @@ cmp.setup({
                 }),
 
         },
-
+        sources = {
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
+                { name = "buffer" },
+                { name = "path" },
+        },
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -143,7 +141,7 @@ cmp.setup.cmdline(':', {
                 { name = 'path' }
         }, {
                 { name = 'cmdline' }
-        })
+        }),
 })
 
 

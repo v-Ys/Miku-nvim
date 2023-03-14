@@ -33,6 +33,53 @@ local conditions = {
 }
 
 
+local M = {}
+M.theme = function()
+        local colors = {
+                darkgray = "#98be65",
+                gray = "#98be65",
+                innerbg = "#1E50A2",
+                outerbg = "#ec5f67",
+                normal = "#98be65",
+                insert = "#003399",
+                visual = "#98be65",
+                replace = "#98be65",
+                command = "#98be65",
+        }
+        return {
+                inactive = {
+                        a = { fg = colors.gray, bg = colors.outerbg, gui = "bold" },
+                        b = { fg = colors.gray, bg = colors.outerbg },
+                        c = { fg = colors.gray, bg = colors.innerbg },
+                },
+                visual = {
+                        a = { fg = colors.darkgray, bg = colors.visual, gui = "bold" },
+                        b = { fg = colors.gray, bg = colors.outerbg },
+                        c = { fg = colors.gray, bg = colors.innerbg },
+                },
+                replace = {
+                        a = { fg = colors.darkgray, bg = colors.replace, gui = "bold" },
+                        b = { fg = colors.gray, bg = colors.outerbg },
+                        c = { fg = colors.gray, bg = colors.innerbg },
+                },
+                normal = {
+                        a = { fg = colors.darkgray, bg = colors.normal, gui = "bold" },
+                        b = { fg = colors.gray, bg = colors.outerbg },
+                        c = { fg = colors.gray, bg = colors.innerbg },
+                },
+                insert = {
+                        a = { fg = colors.darkgray, bg = colors.insert, gui = "bold" },
+                        b = { fg = colors.gray, bg = colors.outerbg },
+                        c = { fg = colors.gray, bg = colors.innerbg },
+                },
+                command = {
+                        a = { fg = colors.darkgray, bg = colors.command, gui = "bold" },
+                        b = { fg = colors.gray, bg = colors.outerbg },
+                        c = { fg = colors.gray, bg = colors.innerbg },
+                },
+        }
+end
+
 local left = {
         --NOTE: ▊
         {
@@ -162,7 +209,7 @@ local config = {
                 component_separators = '',
                 section_separators = '',
                 -- theme = 'auto'
-                theme = 'auto',
+                theme = M.theme(),
         },
         sections = {
                 -- these are to remove the defaults

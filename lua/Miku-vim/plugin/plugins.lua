@@ -1,6 +1,7 @@
 return {
         --NOTE: theme
         { 'Th3Whit3Wolf/one-nvim' },
+        { "EdenEast/nightfox.nvim" },
         { "sainnhe/edge" },
         {
                 'sonph/onehalf',
@@ -10,15 +11,15 @@ return {
         },
         {
                 'projekt0n/github-nvim-theme',
-                version = "v0.0.4",
+                version = "v0.0.7",
                 config = function()
-                        vim.cmd([[colorscheme github_light]])
-                        -- vim.cmd([[colorscheme github_dark]])
+                        require('github-theme').setup({
+                                theme_style = "light",
+                        })
                 end,
         },
         { "catppuccin/nvim",             name = "catppuccin" },
-        { "sainnhe/everforest",          pin = true },
-        { 'dracula/vim',                 name = 'dracula' },
+        { "sainnhe/everforest", },
 
         --NOTE: UI
         --
@@ -75,24 +76,22 @@ return {
                         { 'hrsh7th/cmp-buffer' },   -- buffer completions
                         { 'hrsh7th/cmp-path' },     -- path completions
                         { 'hrsh7th/cmp-cmdline' },  -- cmdline completions
+                        --NOTE:snip,
+                        {
+                                'saadparwaiz1/cmp_luasnip',
+                                dependencies = {
+                                        --snippet engine
+                                        { "L3MON4D3/LuaSnip", },
+                                        -- a bunch of snippets to
+                                        { 'rafamadriz/friendly-snippets', },
+                                }
+                        },
                 },
                 config = function()
                         require("Miku-vim.plugin.conf.cmp")
                 end,
         },
 
-        --NOTE:snip,
-        {
-                'saadparwaiz1/cmp_luasnip',
-        },
-        --snippet engine
-        {
-                "L3MON4D3/LuaSnip",
-        },
-        -- a bunch of snippets to
-        {
-                'rafamadriz/friendly-snippets',
-        },
         --PLUG:LSP
         {
                 'neovim/nvim-lspconfig',

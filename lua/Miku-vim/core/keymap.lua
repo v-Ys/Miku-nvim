@@ -4,7 +4,7 @@ local opts = {
         normal_mode = { noremap = true, silent = true },
         visual_mode = { noremap = true, silent = true },
         visual_block_mode = { noremap = true, silent = true },
-        command_mode = { noremap = true, silent = true },
+        command_mode = { expr = true, noremap = true },
         term_mode = { silent = true },
 }
 
@@ -57,7 +57,7 @@ local keymaps = {
                 --Telescope
                     ["<leader>fh"] = "<cmd>Telescope oldfiles<CR>",
                     ["<leader>ff"] = "<cmd>Telescope find_files<CR>",
-                    ["<leader>fc"] = "<cmd>Telescope current_buffer_fuzzy_find<CR>",
+                    ["<leader>fw"] = "<cmd>Telescope current_buffer_fuzzy_find<CR>",
                     ["<leader>fl"] = "<cmd>Telescope live_grep<CR>",
                     ["<leader>fb"] = "<cmd>Telescope buffers<CR>",
                     ["<Leader>fm"] = "<cmd>Telescope marks<CR>",
@@ -105,7 +105,7 @@ local keymaps = {
 
 --NOTE: user command
 local command = {
-            ["FormatJSON"] = "vim.cmd('%!python -m json.tool')",
+            ["FormatJSON"] = "%!python -m json.tool",
 }
 
 --NOTE: load
